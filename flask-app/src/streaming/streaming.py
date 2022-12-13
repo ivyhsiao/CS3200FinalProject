@@ -7,7 +7,7 @@ streaming = Blueprint('streaming', __name__)
 
 @streaming.route("/addmovie", methods = ['POST'])
 def post_movie():
-    app.logger.info(request.form)
+    create_app.logger.info(request.form)
     cursor = db.get_db().cursor()
     movieid = request.form('movieid')
     streamingcompanyid = request.form('streamingcompanyid')
@@ -19,8 +19,8 @@ def post_movie():
     return "success"
 
 # Get all the movies from the streaming database
-@streaming.route('/ourmovies', methods=['GET'])
-def get_our_movies(streamingcompanyid):
+@streaming.route('/ourmovies/<streamingcompid>', methods=['GET'])
+def get_our_movies(streamingcompid):
     # get a cursor object from the database
     cursor = db.get_db().cursor()
 
@@ -29,6 +29,8 @@ def get_our_movies(streamingcompanyid):
         FROM movie m JOIN starred_movies s ON m.movieid = s.movieid
         JOIN actor a ON a.actorid = s.actorid
         JOIN streamed_movies sm ON sm.movieid = m.movieid
+        JOIN streamingcompany sc on sm.streamingcompanyid = sc.streamingcompanyid
+        WHERE m.streamingcompanyid = {0}'.format(streamingcompid)
         ORDER BY m.numoflikes DESC
         LIMIT 6;
         '''
@@ -55,14 +57,14 @@ def get_our_movies(streamingcompanyid):
 
 # get the top 5 streaming from the database
 @streaming.route('/othersmovies', methods=['GET'])
-def get_others_movies(streamingcompanyid):
+def get_others_movies(streamingcompid):
     cursor = db.get_db().cursor()
     query = '''
         SELECT m.Title, m.description, (a.FirstName, a.LastName as ActorName), p.companyname
         FROM movie m JOIN starred_movies s ON m.movieid = s.movieid
         JOIN actor a ON a.actorid = s.actorid
         JOIN streamed_movies sm ON sm.movieid = m.movieid
-        WHERE sm.streamingcompanyid = {0}'.format(sm.streamingcompanyid)
+        WHERE NOT sm.streamingcompanyid = {0}'.format(streamingcompid)
         ORDER BY m.numoflikes DESC
         LIMIT 6;
     '''
