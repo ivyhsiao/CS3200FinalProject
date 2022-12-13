@@ -27,9 +27,9 @@ def add_customer(userID):
 def get_most_pop_products():
     cursor = db.get_db().cursor()
     query = '''
-        SELECT m.title, m.NumOfLikes, m.YearMade
-        FROM movies m JOIN user u on m.movieId = u.movieId
-        ORDER BY m.NumOfLikes DESC
+        SELECT Title, Description, NumOfLikes, YearMade
+        FROM Movie
+        ORDER BY NumOfLikes DESC
         LIMIT 5;
     '''
     cursor.execute(query)
@@ -51,14 +51,14 @@ def get_most_pop_products():
     return jsonify(json_data)
 
 # get all the liked movies
-@users.route('/like')
+@users.route('/like/<movieid>')
 def get_actors(movieid):
     cursor = db.get_db().cursor()
     query = '''
         SELECT m.Title, (a.FirstName, a.LastName as ActorName), a.email, a.phone, a.country
         FROM movie m JOIN liked_movies lm ON m.movieid = lm.movieid
         JOIN user u ON u.userid = lm.userid
-        WHERE m.movieid = {0}'.format(p.movieid)
+        WHERE m.movieid = {0}'.format(movieid)
     '''
     cursor.execute(query)
        # grab the column headers from the returned data

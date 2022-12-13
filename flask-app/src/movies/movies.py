@@ -31,11 +31,11 @@ def get_top4_movies(studioid):
     cursor = db.get_db().cursor()
 
     query = '''
-    SELECT m.Title, m.description, (a.FirstName, a.LastName as ActorName), p.companyname
-    FROM movie m JOIN starred_movies s ON m.movieid = s.movieid
+    SELECT m.Title, m.Description, (a.FirstName, a.LastName as ActorName), p.companyname
+    FROM Movie m JOIN starred_movies s ON m.movieid = s.movieid
     JOIN actors a ON a.actorid = s.actorid
     JOIN studio_movie sm ON sm.movieid = m.movieid
-    JOIN productioncompany p on sm.studioid = p.studioid
+    JOIN ProductionCompany p on sm.studioid = p.studioid
     WHERE studioid = {0}'.format(studioid)
     ORDER BY m.numoflikes DESC
     LIMIT 4;
@@ -68,7 +68,7 @@ def get_actors(streamingcompid):
     query = '''
         SELECT m.Title, m.description, (a.FirstName, a.LastName as ActorName), 
         FROM movie m JOIN starred_movies s ON m.movieid = s.movieid
-        JOIN actor a ON a.actorid = s.actorid
+        JOIN actors a ON a.actorid = s.actorid
         JOIN streamedmovies sm ON sm.movieid = m.movieid
         JOIN streamingcompany sc on sm.streamingcompanyid = sc.streamingcompanyid
         WHERE m.streamingcompanyid = {0}'.format(streamingcompid)

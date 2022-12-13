@@ -19,8 +19,8 @@ def post_movie():
     return "success"
 
 # Get all the movies from the streaming database
-@streaming.route('/ourmovies', methods=['GET'])
-def get_our_movies(streamingcompanyid):
+@streaming.route('/ourmovies/<streamingcompid>', methods=['GET'])
+def get_our_movies(streamingcompid):
     # get a cursor object from the database
     cursor = db.get_db().cursor()
 
@@ -30,6 +30,7 @@ def get_our_movies(streamingcompanyid):
         JOIN actor a ON a.actorid = s.actorid
         JOIN streamed_movies sm ON sm.movieid = m.movieid
         ORDER BY m.numoflikes DESC
+        WHERE m.streamingcompanyid = {0}'.format(streamingcompid)
         LIMIT 6;
         '''
 
