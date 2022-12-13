@@ -8,7 +8,7 @@ users = Blueprint('users', __name__)
 # Add User
 @users.route('/users/<userID>', methods=['POST'])
 def add_customer(userID):
-    create_app.logger.info(request.form)
+    app.logger.info(request.form)
     cursor = db.get_db().cursor()
     userID = request.form['userID']
     email = request.form['email']
