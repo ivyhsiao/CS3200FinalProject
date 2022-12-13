@@ -20,7 +20,7 @@ def post_movie():
 
 # Get all the movies from the streaming database
 @streaming.route('/ourmovies', methods=['GET'])
-def get_our_movies():
+def get_our_movies(streamingcompanyid):
     # get a cursor object from the database
     cursor = db.get_db().cursor()
 
@@ -55,7 +55,7 @@ def get_our_movies():
 
 # get the top 5 streaming from the database
 @streaming.route('/othersmovies', methods=['GET'])
-def get_others_movies():
+def get_others_movies(streamingcompanyid):
     cursor = db.get_db().cursor()
     query = '''
         SELECT m.Title, m.description, (a.FirstName, a.LastName as ActorName), p.companyname
