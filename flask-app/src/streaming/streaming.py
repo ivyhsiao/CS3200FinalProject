@@ -29,6 +29,8 @@ def get_our_movies(streamingcompid):
         FROM movie m JOIN starred_movies s ON m.movieid = s.movieid
         JOIN actor a ON a.actorid = s.actorid
         JOIN streamed_movies sm ON sm.movieid = m.movieid
+        JOIN streamingcompany sc on sm.streamingcompanyid = sc.streamingcompanyid
+        WHERE m.streamingcompanyid = {0}'.format(streamingcompid)
         ORDER BY m.numoflikes DESC
         WHERE m.streamingcompanyid = {0}'.format(streamingcompid)
         LIMIT 6;
@@ -56,14 +58,14 @@ def get_our_movies(streamingcompid):
 
 # get the top 5 streaming from the database
 @streaming.route('/othersmovies', methods=['GET'])
-def get_others_movies(streamingcompanyid):
+def get_others_movies(streamingcompid):
     cursor = db.get_db().cursor()
     query = '''
         SELECT m.Title, m.description, (a.FirstName, a.LastName as ActorName), p.companyname
         FROM movie m JOIN starred_movies s ON m.movieid = s.movieid
         JOIN actor a ON a.actorid = s.actorid
         JOIN streamed_movies sm ON sm.movieid = m.movieid
-        WHERE sm.streamingcompanyid = {0}'.format(sm.streamingcompanyid)
+        WHERE NOT sm.streamingcompanyid = {0}'.format(streamingcompid)
         ORDER BY m.numoflikes DESC
         LIMIT 6;
     '''
