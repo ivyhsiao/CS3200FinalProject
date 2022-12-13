@@ -28,10 +28,17 @@ def create_app():
     from src.views import views
     from src.customers.customers import customers
     from src.products.products  import products
+    from src.users.users  import users
+    from src.streaming.streaming  import streaming
+    from src.movies.movies  import movies
+
 
     # Register the routes that we just imported so they can be properly handled
     app.register_blueprint(views,       url_prefix='/classic')
     app.register_blueprint(customers,   url_prefix='/classic')
     app.register_blueprint(products,    url_prefix='/classic')
+    app.register_blueprint(users,   url_prefix='/classic')
+    app.register_blueprint(streaming,    url_prefix='/classic')
+    app.register_blueprint(movies,    url_prefix='/classic')
 
     return app
