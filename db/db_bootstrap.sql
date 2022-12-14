@@ -20,7 +20,7 @@ use teamName_db;
 
 DROP TABLE IF EXISTS Movie;
 create table Movie (
-	MovieID INT NOT NULL,
+  MovieID INT NOT NULL,
 	Title VARCHAR(50),
 	MovieLanguage VARCHAR(50),
 	Description TEXT,
@@ -49,8 +49,15 @@ insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, Prod
 In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
 
 Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 98, '$9038420.92', 1996, 795777612);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (9, 'Monitor, The (Babycall)', 'Chinese', 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', 101, '$1738940.74', 1996, 944446592);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (10, 'Death of Maria Malibran, The (Der Tod der Maria Malibran)', 'Sotho', 'Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', 173, '$8695948.32', 2009, 775714463);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (9, 'Monitor, The (Babycall)', 'Chinese', 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
+
+In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
+
+Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', 101, '$1738940.74', 1996, 944446592);
+
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (10, 'Death of Maria Malibran, The (Der Tod der Maria Malibran)', 'Sotho', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', 173, '$8695948.32', 2009, 775714463);
 insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (11, 'Public Speaking', 'Thai', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 161, '$5886655.23', 1999, 891455610);
 insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (12, 'Evil Dead II (Dead by Dawn)', 'Icelandic', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
 

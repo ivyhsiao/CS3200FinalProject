@@ -98,9 +98,8 @@ def get_movies():
     cursor = db.get_db().cursor()
 
     query = '''
-    SELECT Title
+    SELECT *
     FROM Movie
-    WHERE MovieID = 10
     '''
 
     # use cursor to query the database for a list of products
