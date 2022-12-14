@@ -26,13 +26,13 @@ def add_customer(userID):
 @users.route('/top5recomm/<genreid>')
 def get_most_pop_products(genreid):
     cursor = db.get_db().cursor()
-    query = 'SELECT m.Title, m.Description, m.NumOfLikes, m.YearMade \
+    query = 'SELECT m.Title, m.Description, m.NumOfLikes, m.YearMade, g.genrename \
         FROM Movie m JOIN movie_genre mg ON m.movieid = mg.movieid \
         JOIN Genre g ON mg.genreid = g.genreid \
         WHERE g.genreid = {0} \
         ORDER BY NumOfLikes DESC \
         LIMIT 5;'.format(genreid)
-        
+
     cursor.execute(query)
        # grab the column headers from the returned data
     column_headers = [x[0] for x in cursor.description]
@@ -51,16 +51,17 @@ def get_most_pop_products(genreid):
 
     return jsonify(json_data)
 
-# get all the liked movies
-@users.route('/like/<movieid>')
-def get_actors(movieid):
+# get all the liked movies by a user
+@users.route('/liked/<userid>')
+def get_liked(userid):
     cursor = db.get_db().cursor()
-    query = '''
-        SELECT m.Title, (a.FirstName, a.LastName as ActorName), a.email, a.phone, a.country
-        FROM movie m JOIN liked_movies lm ON m.movieid = lm.movieid
-        JOIN users u ON u.userid = lm.userid
-        WHERE m.movieid = {0}'.format(movieid)
-    '''
+    query = 'SELECT m.Title, m.Description, m.NumOfLikes, m.YearMade, g.genrename \
+        FROM Movie m JOIN liked_movies lm ON m.movieid = lm.movieid \
+        JOIN users u ON u.userid = lm.userid \
+        JOIN movie_genre mg ON m.movieid = mg.movieid \
+        JOIN Genre g ON mg.genreid = g.genreid \
+        WHERE m.movieid = {0}'.format(userid)
+
     cursor.execute(query)
        # grab the column headers from the returned data
     column_headers = [x[0] for x in cursor.description]
