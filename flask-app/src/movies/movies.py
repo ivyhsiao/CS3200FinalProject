@@ -84,3 +84,32 @@ def get_actors(movieid):
         json_data.append(dict(zip(column_headers, row)))
 
     return jsonify(json_data)
+
+# get the top 5 movies to recommend from the database by genre
+@movies.route('/top5movie/<genreid>')
+def get_most_pop_products(genreid):
+    cursor = db.get_db().cursor()
+    query = 'SELECT m.Title, m.Description, m.NumOfLikes, m.YearMade, g.genrename \
+        FROM Movie m JOIN movie_genre mg ON m.movieid = mg.movieid \
+        JOIN Genre g ON mg.genreid = g.genreid \
+        WHERE g.genreid = {0} \
+        ORDER BY NumOfLikes DESC \
+        LIMIT 5;'.format(genreid)
+
+    cursor.execute(query)
+       # grab the column headers from the returned data
+    column_headers = [x[0] for x in cursor.description]
+
+    # create an empty dictionary object to use in 
+    # putting column headers together with data
+    json_data = []
+
+    # fetch all the data from the cursor
+    theData = cursor.fetchall()
+
+    # for each of the rows, zip the data elements together with
+    # the column headers. 
+    for row in theData:
+        json_data.append(dict(zip(column_headers, row)))
+
+    return jsonify(json_data)
