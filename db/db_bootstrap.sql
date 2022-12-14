@@ -20,14 +20,14 @@ use teamName_db;
 
 DROP TABLE IF EXISTS Movie;
 create table Movie (
-  MovieID INT NOT NULL,
+	MovieID INT NOT NULL,
 	Title VARCHAR(50),
 	MovieLanguage VARCHAR(50),
 	Description TEXT,
 	MovieLength INT,
 	ProductionCost VARCHAR(50),
 	YearMade VARCHAR(50),
-	NumOfLikes INT,
+	NumOfLikes INT
     
   PRIMARY KEY(MovieID)
 );
@@ -49,14 +49,8 @@ insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, Prod
 In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
 
 Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 98, '$9038420.92', 1996, 795777612);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (9, 'Monitor, The (Babycall)', 'Chinese', 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
-
-In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
-
-Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', 101, '$1738940.74', 1996, 944446592);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (10, 'Death of Maria Malibran, The (Der Tod der Maria Malibran)', 'Sotho', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.
-
-Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', 173, '$8695948.32', 2009, 775714463);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (9, 'Monitor, The (Babycall)', 'Chinese', 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', 101, '$1738940.74', 1996, 944446592);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (10, 'Death of Maria Malibran, The (Der Tod der Maria Malibran)', 'Sotho', 'Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', 173, '$8695948.32', 2009, 775714463);
 insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (11, 'Public Speaking', 'Thai', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 161, '$5886655.23', 1999, 891455610);
 insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (12, 'Evil Dead II (Dead by Dawn)', 'Icelandic', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
 
@@ -151,6 +145,7 @@ insert into Genre (GenreID, GenreName) values (8, 'Romance');
 insert into Genre (GenreID, GenreName) values (9, 'Mystery');
 insert into Genre (GenreID, GenreName) values (10, 'Horror');
 
+DROP TABLE IF EXISTS movie_genre;
 create table movie_genre (
 	MovieID VARCHAR(50),
 	GenreID VARCHAR(2),
@@ -233,46 +228,46 @@ create table actors (
   UNIQUE (Email, Phone)
 );
 
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (1, 'Hettie', 'Brolan', 'hbrolan0@moonfruit.com', 'Female', 'Armenia', '492-378-5995');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (2, 'Gregor', 'Trimmill', 'gtrimmill1@istockphoto.com', 'Male', 'Netherlands', '687-901-9591');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (3, 'Anne-marie', 'Coverlyn', 'acoverlyn2@studiopress.com', 'Female', 'Albania', '270-286-0776');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (4, 'Chilton', 'Rubinowitz', 'crubinowitz3@nymag.com', 'Male', 'Argentina', '291-669-2540');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (5, 'Corina', 'Boynes', 'cboynes4@toplist.cz', 'Female', 'Mexico', '160-788-1301');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (6, 'Jefferson', 'Tomankiewicz', 'jtomankiewicz5@mediafire.com', 'Male', 'Russia', '889-209-5463');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (7, 'Melanie', 'Sheward', 'msheward6@adobe.com', 'Female', 'United States', '325-108-3691');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (8, 'Terry', 'Lawee', 'tlawee7@alexa.com', 'Male', 'China', '644-851-5834');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (9, 'Clea', 'Tampen', 'ctampen8@cbc.ca', 'Female', 'Poland', '752-853-9577');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (10, 'Sutton', 'Leyland', 'sleyland9@census.gov', 'Male', 'Sweden', '429-202-9795');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (11, 'Lorita', 'Whyborne', 'lwhybornea@jugem.jp', 'Female', 'China', '921-888-3404');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (12, 'Sibilla', 'Ricardet', 'sricardetb@last.fm', 'Female', 'Malaysia', '407-436-7495');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (13, 'Wilone', 'Paolazzi', 'wpaolazzic@purevolume.com', 'Female', 'Lithuania', '485-536-9961');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (14, 'Raynell', 'Malby', 'rmalbyd@chicagotribune.com', 'Agender', 'Sweden', '924-293-8006');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (15, 'Tammy', 'Subhan', 'tsubhane@squarespace.com', 'Female', 'Brazil', '143-919-7397');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (16, 'Annamaria', 'Braferton', 'abrafertonf@wiley.com', 'Female', 'Brazil', '402-967-2120');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (17, 'Hermon', 'Amiable', 'hamiableg@yelp.com', 'Male', 'China', '689-582-2827');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (18, 'Yettie', 'Eames', 'yeamesh@surveymonkey.com', 'Female', 'Sweden', '698-706-7327');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (19, 'Woodman', 'Carwardine', 'wcarwardinei@house.gov', 'Male', 'Jordan', '208-467-7157');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (20, 'Kim', 'Furmenger', 'kfurmengerj@washington.edu', 'Female', 'France', '483-103-4650');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (21, 'Phil', 'Gearty', 'pgeartyk@digg.com', 'Female', 'Colombia', '605-455-1697');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (22, 'Glenna', 'Howchin', 'ghowchinl@w3.org', 'Female', 'Mexico', '434-560-9118');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (23, 'Christen', 'Braham', 'cbrahamm@slashdot.org', 'Female', 'Tanzania', '472-429-6580');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (24, 'Anna-diane', 'Savage', 'asavagen@xinhuanet.com', 'Agender', 'Tajikistan', '483-415-7606');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (25, 'Nikolai', 'O''Hallihane', 'nohallihaneo@paypal.com', 'Male', 'Russia', '530-566-2203');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (26, 'Andreas', 'O''Hogertie', 'aohogertiep@deviantart.com', 'Male', 'China', '329-790-0714');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (27, 'Elisha', 'Danniell', 'edanniellq@xrea.com', 'Male', 'Philippines', '597-848-8701');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (28, 'Betsy', 'Brookesbie', 'bbrookesbier@addtoany.com', 'Female', 'France', '154-271-8864');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (29, 'Sisely', 'Rosedale', 'srosedales@cocolog-nifty.com', 'Female', 'Croatia', '225-286-4628');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (30, 'Goldarina', 'Martensen', 'gmartensent@bizjournals.com', 'Genderqueer', 'Indonesia', '481-378-3054');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (31, 'Leon', 'Leate', 'lleateu@dailymotion.com', 'Non-binary', 'Malaysia', '212-721-6558');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (32, 'Martino', 'Stathor', 'mstathorv@w3.org', 'Male', 'Afghanistan', '823-299-5903');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (33, 'Tanya', 'Mattityahou', 'tmattityahouw@google.com', 'Genderfluid', 'Russia', '619-993-8071');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (34, 'Horatia', 'Hearn', 'hhearnx@pbs.org', 'Female', 'Portugal', '711-842-0391');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (35, 'Larina', 'Malimoe', 'lmalimoey@ebay.co.uk', 'Female', 'Poland', '426-298-1674');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (36, 'Andreana', 'Dingley', 'adingleyz@4shared.com', 'Female', 'China', '409-605-5899');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (37, 'Lindie', 'Boarer', 'lboarer10@php.net', 'Female', 'Indonesia', '111-690-3259');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (38, 'Grace', 'Keelinge', 'gkeelinge11@msn.com', 'Male', 'Vietnam', '790-506-1241');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (39, 'Rosamund', 'Franzetti', 'rfranzetti12@cam.ac.uk', 'Female', 'Ecuador', '240-931-1261');
-insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (40, 'Benedict', 'Batcock', 'bbatcock13@purevolume.com', 'Male', 'Indonesia', '485-594-9411');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (1, 'Bucky', 'Bover', 'bbover0@ftc.gov', 'Male', 'Sweden', '504-756-8743');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (2, 'Rozanna', 'Jeffes', 'rjeffes1@t-online.de', 'Female', 'Poland', '611-426-0752');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (3, 'Tiebold', 'Gemeau', 'tgemeau2@ucsd.edu', 'Male', 'Portugal', '641-120-4904');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (4, 'Jacquelin', 'Bolzen', 'jbolzen3@eventbrite.com', 'Female', 'Sweden', '238-766-6349');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (5, 'Carolyn', 'Garvin', 'cgarvin4@mlb.com', 'Female', 'Malaysia', '580-394-8136');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (6, 'Derek', 'Buttrey', 'dbuttrey5@clickbank.net', 'Male', 'Norway', '769-824-5956');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (7, 'Rogerio', 'Holston', 'rholston6@oaic.gov.au', 'Genderfluid', 'Philippines', '349-567-1727');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (8, 'Lonni', 'Pawlett', 'lpawlett7@google.es', 'Female', 'Nigeria', '978-992-4368');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (9, 'Gwenore', 'Abrahim', 'gabrahim8@nature.com', 'Female', 'Japan', '680-567-8030');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (10, 'Tomkin', 'Towll', 'ttowll9@flickr.com', 'Male', 'China', '472-934-0340');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (11, 'Edgard', 'McKissack', 'emckissacka@reference.com', 'Male', 'China', '478-538-7789');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (12, 'Spenser', 'O'' Scallan', 'soscallanb@paginegialle.it', 'Male', 'Russia', '812-747-4480');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (13, 'Margery', 'Waszczyk', 'mwaszczykc@cloudflare.com', 'Female', 'China', '116-936-6672');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (14, 'Alverta', 'Schirach', 'aschirachd@edublogs.org', 'Agender', 'China', '662-543-9473');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (15, 'Trescha', 'Cordoba', 'tcordobae@nih.gov', 'Female', 'Indonesia', '653-122-9757');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (16, 'Grazia', 'Minister', 'gministerf@etsy.com', 'Female', 'Oman', '196-936-6466');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (17, 'Ira', 'Oiller', 'ioillerg@ox.ac.uk', 'Male', 'Bangladesh', '125-933-7601');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (18, 'Salome', 'Adamkiewicz', 'sadamkiewiczh@woothemes.com', 'Genderqueer', 'Greece', '161-622-8688');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (19, 'Brigit', 'Filippyev', 'bfilippyevi@prlog.org', 'Female', 'Japan', '578-975-7905');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (20, 'Chaddy', 'Celle', 'ccellej@flickr.com', 'Male', 'Russia', '529-496-4629');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (21, 'Alethea', 'Skedge', 'askedgek@omniture.com', 'Female', 'Poland', '138-145-8818');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (22, 'Roz', 'Batchellor', 'rbatchellorl@cornell.edu', 'Female', 'Philippines', '714-179-6705');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (23, 'Pierre', 'MacDiarmid', 'pmacdiarmidm@china.com.cn', 'Male', 'Philippines', '795-971-2829');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (24, 'Mildred', 'Maudsley', 'mmaudsleyn@mac.com', 'Female', 'Poland', '839-752-0196');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (25, 'Mollee', 'Hamner', 'mhamnero@boston.com', 'Female', 'Indonesia', '596-432-6321');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (26, 'Karine', 'Marten', 'kmartenp@bizjournals.com', 'Female', 'Indonesia', '621-335-3211');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (27, 'Roselle', 'Haggie', 'rhaggieq@yandex.ru', 'Genderfluid', 'Brazil', '558-346-4375');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (28, 'Aubrie', 'Rydzynski', 'arydzynskir@disqus.com', 'Female', 'Indonesia', '473-350-0966');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (29, 'Ruth', 'Gawne', 'rgawnes@wp.com', 'Female', 'China', '661-789-2513');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (30, 'Rania', 'Moralee', 'rmoraleet@tuttocitta.it', 'Female', 'Argentina', '470-219-7247');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (31, 'Grata', 'Hawarden', 'ghawardenu@macromedia.com', 'Female', 'China', '118-680-7529');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (32, 'Constantin', 'Tabbitt', 'ctabbittv@imgur.com', 'Polygender', 'Indonesia', '642-669-7160');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (33, 'Yul', 'Metzing', 'ymetzingw@google.com', 'Male', 'China', '624-760-0008');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (34, 'Oberon', 'Evison', 'oevisonx@typepad.com', 'Male', 'Kenya', '727-356-5922');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (35, 'Valma', 'Glenwright', 'vglenwrighty@nydailynews.com', 'Female', 'China', '925-233-5869');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (36, 'Reg', 'Hannam', 'rhannamz@mayoclinic.com', 'Male', 'China', '371-272-5429');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (37, 'Riannon', 'Plane', 'rplane10@angelfire.com', 'Female', 'Brazil', '331-343-3362');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (38, 'Jehanna', 'Oldridge', 'joldridge11@nytimes.com', 'Female', 'Comoros', '579-895-7445');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (39, 'Jourdain', 'Farndon', 'jfarndon12@apache.org', 'Male', 'Pakistan', '301-639-9773');
+insert into actors (ActorID, FirstName, LastName, email, gender, country, phone) values (40, 'Wait', 'Klimkin', 'wklimkin13@ebay.co.uk', 'Male', 'Poland', '573-104-3120');
 
 DROP TABLE IF EXISTS starred_movies;
 create table starred_movies (
@@ -477,8 +472,8 @@ insert into produced_by_comp (MovieID, StudioID) values ('5', '9');
 insert into produced_by_comp (MovieID, StudioID) values ('24', '1');
 insert into produced_by_comp (MovieID, StudioID) values ('2', '2');
 
-DROP TABLE IF EXISTS user;
-create table user (
+DROP TABLE IF EXISTS users;
+create table users (
   userid INTEGER NOT NULL,
   FirstName VARCHAR(50),
 	LastName VARCHAR(50),
@@ -555,7 +550,7 @@ CREATE TABLE liked_movies(
     userId int NOT NULL,
 
     PRIMARY KEY(movieId, userId),
-    FOREIGN KEY(userId) references user (userid),
+    FOREIGN KEY(userId) references users (userid),
     FOREIGN KEY(movieId) references Movie (movieId)
 );
 insert into liked_movies (MovieID, UserID) values ('37', '46');

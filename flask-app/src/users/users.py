@@ -57,7 +57,7 @@ def get_actors(movieid):
     query = '''
         SELECT m.Title, (a.FirstName, a.LastName as ActorName), a.email, a.phone, a.country
         FROM movie m JOIN liked_movies lm ON m.movieid = lm.movieid
-        JOIN user u ON u.userid = lm.userid
+        JOIN users u ON u.userid = lm.userid
         WHERE m.movieid = {0}'.format(movieid)
     '''
     cursor.execute(query)
