@@ -18,8 +18,9 @@ flush privileges;
 -- change it here too. 
 use teamName_db;
 
+DROP TABLE IF EXISTS Movie;
 create table Movie (
-  MovieID INTEGER AUTO_INCREMENT NOT NULL,
+  MovieID INT NOT NULL,
 	Title VARCHAR(50),
 	MovieLanguage VARCHAR(50),
 	Description TEXT,
@@ -30,134 +31,125 @@ create table Movie (
     
   PRIMARY KEY(MovieID)
 );
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (1, 'Case of the Whitechapel Vampire, The', 'Macedonian', 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', 166, '$5901926.87', 1994, 407284525);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (2, 'Resident Evil: Extinction', 'Dari', 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', 129, '$2051840.85', 2004, 579928488);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (3, 'Three Stooges in Orbit, The', 'Latvian', 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
 
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Effect of Gamma Rays on Man-in-the-Moon Marigolds, The', 'Swahili', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
+Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
 
-Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
+Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.', 72, '$3870042.04', 1999, 428444780);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (4, 'Dog Pound', 'Swedish', 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.', 123, '$7653640.38', 2009, 213549305);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (5, 'Alice and Martin (Alice et Martin)', 'Sotho', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.', 103, '$2383968.49', 2007, 133280572);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (6, 'Waiting for Guffman', 'Swedish', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
-In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', 126, '$7082001.78', 2003, 541059093);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Breaking Wind', 'Māori', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', 157, '$5482588.38', 1995, 544926510);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Spiders, Part 2: The Diamond Ship, The (Die Spinnen, 2. Teil - Das Brillantenschiff)', 'Macedonian', 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', 76, '$8474306.31', 2011, 965469000);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (7, 'Juggernaut', 'Greek', 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', 100, '$6014226.09', 2004, 646352540);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (8, 'Fairhaven', 'Telugu', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
 
-Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
+In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
 
-Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.', 150, '$2281685.95', 1961, 373707455);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Apartment 1303', 'English', 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', 174, '$1072074.33', 1994, 434308669);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Hit and Run (Hit & Run)', 'Filipino', 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', 111, '$5909680.56', 2009, 989747377);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Our Town', 'Yiddish', 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
-
-Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.', 117, '$292019.99', 1998, 767444121);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Marfa Girl', 'Kyrgyz', 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.', 97, '$826810.66', 2012, 848341202);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Three Days of the Condor (3 Days of the Condor)', 'Armenian', 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
-
-Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', 89, '$4213371.42', 2006, 255384172);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Phantom, The', 'Burmese', 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', 128, '$1329506.45', 2006, 863738819);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Walled In', 'Guaraní', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
-
-In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', 176, '$249411.06', 2010, 387778968);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Zapped!', 'Finnish', 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
-
-Fusce consequat. Nulla nisl. Nunc nisl.', 76, '$7796668.70', 1993, 235840324);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Zatoichi in Desperation (Shin Zatôichi monogatari: Oreta tsue) (Zatôichi 24)', 'Punjabi', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', 101, '$7446336.56', 2000, 933398561);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Mei and the Kittenbus', 'Lao', 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
-
-Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 102, '$2323029.29', 2008, 206283187);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Expecting Love (Mala wielka milosc)', 'Guaraní', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
-
-Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', 158, '$1947347.28', 2000, 539211441);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('We''re Back! A Dinosaur''s Story', 'Dutch', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-
-Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 80, '$8325106.89', 1986, 736899710);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Very Happy Alexander (Alexandre le bienheureux)', 'Lao', 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', 113, '$1027736.05', 2010, 318727505);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Traces of Red', 'New Zealand Sign Language', 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
-
-Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 113, '$8514833.17', 2013, 762535086);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Teacher''s Pet', 'Swedish', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', 141, '$7600612.80', 1992, 906625427);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Por un puñado de besos', 'Somali', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.
-
-Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.', 141, '$531706.01', 2004, 790124514);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Crow: City of Angels, The', 'Polish', 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
-
-Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.', 137, '$5214886.12', 2002, 740000973);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Gator', 'Croatian', 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 107, '$7714088.94', 1999, 141254877);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Rent-a-Kid', 'German', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
-
-Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
-
-In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', 152, '$5216004.43', 2009, 45356235);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Good Old Fashioned Orgy, A', 'Māori', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
-
-Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-
-Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 144, '$6322862.41', 1995, 590944925);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('976-EVIL II', 'Telugu', 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', 161, '$4674695.98', 2000, 776528933);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Chamber of Death (Chambre des morts, La)', 'Fijian', 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.', 127, '$709048.47', 2004, 752303588);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Night and Day (Bam gua nat)', 'Thai', 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', 73, '$7371648.57', 2011, 176321186);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Hangover Part II, The', 'Maltese', 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
-
-Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', 73, '$7622043.06', 2004, 318010936);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Twelve Monkeys (a.k.a. 12 Monkeys)', 'Portuguese', 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
+Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 98, '$9038420.92', 1996, 795777612);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (9, 'Monitor, The (Babycall)', 'Chinese', 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
 
 In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
 
-Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', 84, '$3893156.19', 1992, 237398159);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Errors of the Human Body ', 'Bosnian', 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
+Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', 101, '$1738940.74', 1996, 944446592);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (10, 'Death of Maria Malibran, The (Der Tod der Maria Malibran)', 'Sotho', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
-Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.', 92, '$4684046.35', 2011, 192342950);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Phantom of Liberty, The (Fantôme de la liberté, Le)', 'Hindi', 'In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', 130, '$108205.69', 2004, 484936363);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Strange Magic', 'Croatian', 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', 173, '$8695948.32', 2009, 775714463);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (11, 'Public Speaking', 'Thai', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 161, '$5886655.23', 1999, 891455610);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (12, 'Evil Dead II (Dead by Dawn)', 'Icelandic', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+
+Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
+
+Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', 155, '$6222529.74', 2007, 39756166);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (13, 'Police Academy 5: Assignment: Miami Beach', 'Korean', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', 174, '$5340727.97', 2008, 950699363);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (14, 'Bill Hicks: Sane Man', 'Tamil', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', 175, '$2352431.09', 2004, 503780072);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (15, 'Wild Guitar', 'Czech', 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', 108, '$2812377.12', 1998, 231273418);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (16, 'Fishtales', 'Icelandic', 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
+
+Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', 177, '$7206679.50', 1977, 979857744);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (17, 'Pathology', 'Gujarati', 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
+
+Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+
+Fusce consequat. Nulla nisl. Nunc nisl.', 177, '$1494999.50', 1989, 766165865);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (18, 'Overcoat, The (Il cappotto)', 'Maltese', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 88, '$8630186.16', 2007, 391284655);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (19, 'Mr. Thank You (Arigatô-san)', 'Aymara', 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
+
+Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 95, '$5100936.34', 1999, 220538761);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (20, 'Vehicle 19', 'Malayalam', 'Fusce consequat. Nulla nisl. Nunc nisl.', 155, '$3002159.96', 1990, 947940110);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (21, 'Women in Love', 'Khmer', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', 154, '$5019358.08', 2006, 469833414);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (22, 'Butter', 'Bengali', 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.', 117, '$9670544.30', 1988, 642044800);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (23, 'I Saw Mommy Kissing Santa Claus', 'Macedonian', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 102, '$4506669.09', 1999, 912068655);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (24, 'Big Day, The (We Met on the Vineyard)', 'Malagasy', 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.', 90, '$9872531.97', 1992, 96916411);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (25, 'Remains of the Day, The', 'Somali', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', 89, '$2294240.69', 1926, 374661302);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (26, 'Snake Eyes', 'Spanish', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
+
+In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 155, '$6308407.02', 1973, 613236227);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (27, 'Sexual Life', 'Croatian', 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+
+Fusce consequat. Nulla nisl. Nunc nisl.', 72, '$600093.42', 1990, 806189247);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (28, 'Ffolkes', 'Filipino', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.', 139, '$8287922.14', 2005, 699471384);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (29, 'Welcome to Australia', 'Haitian Creole', 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.', 107, '$8910791.37', 2010, 206040966);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (30, 'Eyewitness (Janitor, The)', 'Kannada', 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+
+Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 114, '$1922178.80', 2006, 312456607);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (31, 'Hunky Dory', 'Czech', 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
+
+Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
+
+Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.', 117, '$9979776.69', 1969, 197429572);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (32, 'Pornography (Pornografia)', 'Czech', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 138, '$4504606.56', 2009, 989911743);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (33, 'Broken Vessels', 'Dari', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
+
+Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.', 149, '$7653156.28', 2009, 723504654);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (34, 'Legend of Hercules, The', 'Azeri', 'In congue. Etiam justo. Etiam pretium iaculis justo.
+
+In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', 125, '$8207235.52', 1992, 118587128);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (35, 'Silent Night, Deadly Night III: Better Watch Out!', 'Sotho', 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+
+Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 144, '$8989836.64', 1999, 878171272);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (36, 'Bad Blood: A Cautionary Tale ', 'Malay', 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.', 180, '$1399510.09', 1993, 992567721);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (37, 'Titus', 'Nepali', 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', 130, '$5057121.82', 2008, 938701346);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (38, 'Casshern', 'Bulgarian', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', 100, '$5854418.41', 2011, 201492375);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (39, 'Katze im Sack', 'French', 'In congue. Etiam justo. Etiam pretium iaculis justo.
+
+In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
+
+Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 162, '$8702164.91', 1999, 868068823);
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (40, 'Arabian Nights', 'Māori', 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
 
 Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
 
-Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 175, '$9226259.97', 2001, 281301872);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Phaedra', 'Italian', 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 160, '$644037.86', 2005, 759291753);
 
-Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 105, '$3071070.33', 2007, 55718982);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Zhou Yu''s Train (Zhou Yu de huo che)', 'Nepali', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-
-Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
-
-Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.', 85, '$7679149.30', 2000, 893039352);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Sube y Baja', 'Tsonga', 'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.', 92, '$8215988.79', 1986, 904833700);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Cheech & Chong''s Nice Dreams', 'Croatian', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
-
-Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
-
-Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', 155, '$5701167.17', 2005, 38764075);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Duets', 'Persian', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-
-Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 109, '$5524733.34', 1995, 395226389);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Wool Cap, The', 'Amharic', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', 146, '$1280751.45', 1993, 341889927);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Babylon 5: The Gathering', 'Georgian', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
-
-Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
-
-In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', 73, '$6556710.46', 2007, 78262555);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Eureka', 'Oriya', 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.', 173, '$3449012.27', 1993, 99653148);
-insert into Movie (Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values ('Hell Is for Heroes', 'Malayalam', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
-
-Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-
-Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 160, '$3206433.56', 1983, 576723062);
-
-CREATE TABLE Genre (
-    GenreID int AUTO_INCREMENT NOT NULL,
+DROP TABLE IF EXISTS Genre;
+create table Genre (
+    GenreID INT NOT NULL,
     GenreName varchar(40) NOT NULL,
 
-    PRIMARY KEY(GenreID),
-    UNIQUE(GenreName)
+    PRIMARY KEY(GenreID)
 );
 
-insert into Genre (GenreName) values ('Comedy');
-insert into Genre (GenreName) values ('Drama');
-insert into Genre (GenreName) values ('Children');
-insert into Genre (GenreName) values ('Adventure');
-insert into Genre (GenreName) values ('Action');
-insert into Genre (GenreName) values ('Crime');
-insert into Genre (GenreName) values ('Musical');
-insert into Genre (GenreName) values ('Romance');
-insert into Genre (GenreName) values ('Mystery');
-insert into Genre (GenreName) values ('Horror');
+insert into Genre (GenreID, GenreName) values (1, 'Comedy');
+insert into Genre (GenreID, GenreName) values (2, 'Drama');
+insert into Genre (GenreID, GenreName) values (3, 'Children');
+insert into Genre (GenreID, GenreName) values (4, 'Adventure');
+insert into Genre (GenreID, GenreName) values (5, 'Action');
+insert into Genre (GenreID, GenreName) values (6, 'Crime');
+insert into Genre (GenreID, GenreName) values (7, 'Musical');
+insert into Genre (GenreID, GenreName) values (8, 'Romance');
+insert into Genre (GenreID, GenreName) values (9, 'Mystery');
+insert into Genre (GenreID, GenreName) values (10, 'Horror');
 
 create table movie_genre (
 	MovieID VARCHAR(50),
@@ -165,7 +157,6 @@ create table movie_genre (
 
   FOREIGN KEY (MovieID) REFERENCES Movie (MovieID),
   FOREIGN KEY (GenreID) REFERENCES Genre (GenreID)
-
 );
 insert into movie_genre (MovieID, GenreID) values ('16', 5);
 insert into movie_genre (MovieID, GenreID) values ('25', 7);
@@ -228,8 +219,9 @@ insert into movie_genre (MovieID, GenreID) values ('6', 1);
 insert into movie_genre (MovieID, GenreID) values ('29', 4);
 insert into movie_genre (MovieID, GenreID) values ('1', 2);
 
+DROP TABLE IF EXISTS actors;
 create table actors (
-  ActorID INTEGER AUTO_INCREMENT NOT NULL,
+  ActorID INTEGER NOT NULL,
 	FirstName VARCHAR(50),
 	LastName VARCHAR(50),
 	email VARCHAR(50),
@@ -241,47 +233,48 @@ create table actors (
   UNIQUE (Email, Phone)
 );
 
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Dillie', 'Bowra', 'dbowra0@cafepress.com', 'Agender', 'Philippines', '339-421-5930');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Sax', 'Tolumello', 'stolumello1@drupal.org', 'Male', 'Russia', '892-938-3002');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Justinn', 'Pargetter', 'jpargetter2@nature.com', 'Bigender', 'China', '862-778-8067');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Janean', 'Beldum', 'jbeldum3@dropbox.com', 'Female', 'China', '512-581-4907');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Earlie', 'Kleine', 'ekleine4@marriott.com', 'Male', 'Portugal', '186-543-2310');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Kathe', 'Di Boldi', 'kdiboldi5@fda.gov', 'Female', 'Latvia', '822-805-6637');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Flemming', 'Gerrell', 'fgerrell6@multiply.com', 'Genderfluid', 'China', '531-948-5272');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Alisander', 'Clement', 'aclement7@histats.com', 'Male', 'Mongolia', '262-156-3287');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('August', 'Neeve', 'aneeve8@wiley.com', 'Genderfluid', 'Uganda', '299-483-1210');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Gonzalo', 'Cackett', 'gcackett9@si.edu', 'Male', 'Ukraine', '191-511-8606');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Madel', 'Huyton', 'mhuytona@mapy.cz', 'Female', 'Brazil', '412-381-9305');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Raven', 'Merriman', 'rmerrimanb@barnesandnoble.com', 'Female', 'Tanzania', '545-463-9420');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Rubin', 'Thominga', 'rthomingac@wired.com', 'Male', 'Kazakhstan', '481-896-9429');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Ase', 'Rowlands', 'arowlandsd@rambler.ru', 'Male', 'Ireland', '629-655-9858');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Jeremiah', 'Mateev', 'jmateeve@state.gov', 'Male', 'Mauritius', '872-188-9471');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Penelopa', 'Harbinson', 'pharbinsonf@google.com.au', 'Female', 'China', '975-663-5490');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Conny', 'Frandsen', 'cfrandseng@shareasale.com', 'Male', 'Palestinian Territory', '162-789-3488');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Crystie', 'Kaasmann', 'ckaasmannh@t.co', 'Female', 'North Korea', '391-386-6141');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Culley', 'Arias', 'cariasi@uiuc.edu', 'Male', 'Portugal', '445-409-2908');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Cecilio', 'Jiracek', 'cjiracekj@ihg.com', 'Male', 'China', '501-585-1486');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Arlie', 'Aspden', 'aaspdenk@godaddy.com', 'Female', 'China', '232-737-1045');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Ilsa', 'Baldetti', 'ibaldettil@istockphoto.com', 'Female', 'Poland', '799-533-7623');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Dalton', 'Annear', 'dannearm@photobucket.com', 'Male', 'Peru', '101-186-0404');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Linus', 'Merrington', 'lmerringtonn@imdb.com', 'Male', 'Japan', '128-901-4323');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Hilde', 'Bellanger', 'hbellangero@state.tx.us', 'Female', 'China', '202-261-7089');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Chery', 'Gilbart', 'cgilbartp@wired.com', 'Female', 'United States', '414-990-5978');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Krystle', 'Nehl', 'knehlq@prweb.com', 'Female', 'Sweden', '254-956-6861');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Sander', 'Drysdale', 'sdrysdaler@patch.com', 'Male', 'Indonesia', '275-476-1346');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Zachariah', 'Beauchamp', 'zbeauchamps@msn.com', 'Male', 'Philippines', '843-198-4286');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Lemmy', 'Travis', 'ltravist@yandex.ru', 'Male', 'Poland', '716-627-1125');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Ferdinanda', 'Chesshyre', 'fchesshyreu@twitpic.com', 'Female', 'Sweden', '299-922-3101');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Pavla', 'Paulat', 'ppaulatv@1688.com', 'Polygender', 'Indonesia', '107-597-7968');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Gael', 'Wibrow', 'gwibroww@yelp.com', 'Male', 'Philippines', '133-132-1182');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Nata', 'Frise', 'nfrisex@sun.com', 'Female', 'Kenya', '868-625-3256');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Kennie', 'Gisbey', 'kgisbeyy@live.com', 'Male', 'Portugal', '651-325-9113');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Erek', 'Brigg', 'ebriggz@last.fm', 'Male', 'Philippines', '642-341-4110');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Baudoin', 'Dyke', 'bdyke10@auda.org.au', 'Male', 'France', '161-984-6871');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Alfie', 'Openshaw', 'aopenshaw11@homestead.com', 'Male', 'France', '778-143-8264');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Iolande', 'Law', 'ilaw12@yale.edu', 'Female', 'Indonesia', '946-284-4968');
-insert into actors (FirstName, LastName, email, gender, country, phone) values ('Dennie', 'Walding', 'dwalding13@statcounter.com', 'Male', 'Iran', '418-487-4168');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (1, 'Hettie', 'Brolan', 'hbrolan0@moonfruit.com', 'Female', 'Armenia', '492-378-5995');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (2, 'Gregor', 'Trimmill', 'gtrimmill1@istockphoto.com', 'Male', 'Netherlands', '687-901-9591');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (3, 'Anne-marie', 'Coverlyn', 'acoverlyn2@studiopress.com', 'Female', 'Albania', '270-286-0776');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (4, 'Chilton', 'Rubinowitz', 'crubinowitz3@nymag.com', 'Male', 'Argentina', '291-669-2540');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (5, 'Corina', 'Boynes', 'cboynes4@toplist.cz', 'Female', 'Mexico', '160-788-1301');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (6, 'Jefferson', 'Tomankiewicz', 'jtomankiewicz5@mediafire.com', 'Male', 'Russia', '889-209-5463');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (7, 'Melanie', 'Sheward', 'msheward6@adobe.com', 'Female', 'United States', '325-108-3691');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (8, 'Terry', 'Lawee', 'tlawee7@alexa.com', 'Male', 'China', '644-851-5834');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (9, 'Clea', 'Tampen', 'ctampen8@cbc.ca', 'Female', 'Poland', '752-853-9577');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (10, 'Sutton', 'Leyland', 'sleyland9@census.gov', 'Male', 'Sweden', '429-202-9795');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (11, 'Lorita', 'Whyborne', 'lwhybornea@jugem.jp', 'Female', 'China', '921-888-3404');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (12, 'Sibilla', 'Ricardet', 'sricardetb@last.fm', 'Female', 'Malaysia', '407-436-7495');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (13, 'Wilone', 'Paolazzi', 'wpaolazzic@purevolume.com', 'Female', 'Lithuania', '485-536-9961');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (14, 'Raynell', 'Malby', 'rmalbyd@chicagotribune.com', 'Agender', 'Sweden', '924-293-8006');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (15, 'Tammy', 'Subhan', 'tsubhane@squarespace.com', 'Female', 'Brazil', '143-919-7397');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (16, 'Annamaria', 'Braferton', 'abrafertonf@wiley.com', 'Female', 'Brazil', '402-967-2120');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (17, 'Hermon', 'Amiable', 'hamiableg@yelp.com', 'Male', 'China', '689-582-2827');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (18, 'Yettie', 'Eames', 'yeamesh@surveymonkey.com', 'Female', 'Sweden', '698-706-7327');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (19, 'Woodman', 'Carwardine', 'wcarwardinei@house.gov', 'Male', 'Jordan', '208-467-7157');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (20, 'Kim', 'Furmenger', 'kfurmengerj@washington.edu', 'Female', 'France', '483-103-4650');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (21, 'Phil', 'Gearty', 'pgeartyk@digg.com', 'Female', 'Colombia', '605-455-1697');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (22, 'Glenna', 'Howchin', 'ghowchinl@w3.org', 'Female', 'Mexico', '434-560-9118');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (23, 'Christen', 'Braham', 'cbrahamm@slashdot.org', 'Female', 'Tanzania', '472-429-6580');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (24, 'Anna-diane', 'Savage', 'asavagen@xinhuanet.com', 'Agender', 'Tajikistan', '483-415-7606');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (25, 'Nikolai', 'O''Hallihane', 'nohallihaneo@paypal.com', 'Male', 'Russia', '530-566-2203');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (26, 'Andreas', 'O''Hogertie', 'aohogertiep@deviantart.com', 'Male', 'China', '329-790-0714');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (27, 'Elisha', 'Danniell', 'edanniellq@xrea.com', 'Male', 'Philippines', '597-848-8701');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (28, 'Betsy', 'Brookesbie', 'bbrookesbier@addtoany.com', 'Female', 'France', '154-271-8864');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (29, 'Sisely', 'Rosedale', 'srosedales@cocolog-nifty.com', 'Female', 'Croatia', '225-286-4628');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (30, 'Goldarina', 'Martensen', 'gmartensent@bizjournals.com', 'Genderqueer', 'Indonesia', '481-378-3054');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (31, 'Leon', 'Leate', 'lleateu@dailymotion.com', 'Non-binary', 'Malaysia', '212-721-6558');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (32, 'Martino', 'Stathor', 'mstathorv@w3.org', 'Male', 'Afghanistan', '823-299-5903');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (33, 'Tanya', 'Mattityahou', 'tmattityahouw@google.com', 'Genderfluid', 'Russia', '619-993-8071');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (34, 'Horatia', 'Hearn', 'hhearnx@pbs.org', 'Female', 'Portugal', '711-842-0391');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (35, 'Larina', 'Malimoe', 'lmalimoey@ebay.co.uk', 'Female', 'Poland', '426-298-1674');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (36, 'Andreana', 'Dingley', 'adingleyz@4shared.com', 'Female', 'China', '409-605-5899');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (37, 'Lindie', 'Boarer', 'lboarer10@php.net', 'Female', 'Indonesia', '111-690-3259');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (38, 'Grace', 'Keelinge', 'gkeelinge11@msn.com', 'Male', 'Vietnam', '790-506-1241');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (39, 'Rosamund', 'Franzetti', 'rfranzetti12@cam.ac.uk', 'Female', 'Ecuador', '240-931-1261');
+insert into actors (ActorID, first_name, last_name, email, gender, country, phone) values (40, 'Benedict', 'Batcock', 'bbatcock13@purevolume.com', 'Male', 'Indonesia', '485-594-9411');
 
+DROP TABLE IF EXISTS starred_movies;
 create table starred_movies (
 	ActorID VARCHAR(50),
 	MovieID VARCHAR(50),
@@ -390,8 +383,9 @@ insert into starred_movies (ActorID, MovieID) values ('15', '6');
 insert into starred_movies (ActorID, MovieID) values ('39', '4');
 insert into starred_movies (ActorID, MovieID) values ('2', '25');
 
+DROP TABLE IF EXISTS ProductionCompany;
 CREATE TABLE ProductionCompany(
-  studioid INTEGER AUTO_INCREMENT NOT NULL,
+  studioid INTEGER NOT NULL,
 	CompanyName VARCHAR(50),
 	Email VARCHAR(50),
 	Phone VARCHAR(50),
@@ -403,19 +397,18 @@ CREATE TABLE ProductionCompany(
   PRIMARY KEY(studioid),
   UNIQUE(Email, Phone)
 );
+insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (1, 'Jennee', 'jberdale0@newyorker.com', '889-695-9808', 'South Korea', null, 'Ansan-si', '28567 Quincy Avenue');
+insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (2, 'Kara-lynn', 'kjobson1@delicious.com', '847-581-8636', 'Poland', null, 'Piława Górna', '128 Everett Way');
+insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (3, 'Turner', 'triddeough2@ebay.com', '931-890-0696', 'China', null, 'Yangchengzhuang', '270 Michigan Court');
+insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (4, 'Erhard', 'emongeot3@mac.com', '447-217-3604', 'Czech Republic', null, 'Libouchec', '2455 Hauk Hill');
+insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (5, 'Bent', 'brumming4@tinypic.com', '611-613-6479', 'Sweden', 'Stockholm', 'Stocksund', '6445 Ridgeview Junction');
+insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (6, 'Clive', 'catcherley5@soundcloud.com', '262-296-5316', 'China', null, 'Shaxi', '367 Jay Terrace');
+insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (7, 'Olive', 'obrundle6@facebook.com', '146-654-2812', 'China', null, 'Huizhai', '938 Gale Junction');
+insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (8, 'Leslie', 'lbruckstein7@networkadvertising.org', '861-861-4729', 'Portugal', 'Ilha de São Miguel', 'Pico da Pedra', '7048 Donald Avenue');
+insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (9, 'Blair', 'bpolland8@nba.com', '705-924-5442', 'Thailand', null, 'Nong Saeng', '8 Sunfield Center');
+insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (10, 'Giselle', 'ghanks9@dion.ne.jp', '202-372-1240', 'Poland', null, 'Bieliny', '9 Nevada Drive');
 
-insert into ProductionCompany (CompanyName, Email, Phone, Country, State, City, Street) values ('Hauck Group', 'ytrengrove0@php.net', '282-642-9354', 'China', null, 'Chenghe', '41751 Summit Court');
-insert into ProductionCompany (CompanyName, Email, Phone, Country, State, City, Street) values ('Grady-Moore', 'wbrundill1@discuz.net', '310-296-6411', 'Philippines', null, 'Aliaga', '5 Packers Place');
-insert into ProductionCompany (CompanyName, Email, Phone, Country, State, City, Street) values ('Doyle-Huels', 'snoye2@amazon.co.jp', '888-790-7423', 'Dominican Republic', null, 'Juan Santiago', '55 Esker Center');
-insert into ProductionCompany (CompanyName, Email, Phone, Country, State, City, Street) values ('Klocko, Huel and O''Hara', 'rmargarson3@free.fr', '483-239-6681', 'Russia', null, 'Dachnoye', '1943 Arizona Court');
-insert into ProductionCompany (CompanyName, Email, Phone, Country, State, City, Street) values ('Schneider-Volkman', 'jriditch4@cisco.com', '932-422-0118', 'Poland', null, 'Świętochłowice', '2 Clemons Point');
-insert into ProductionCompany (CompanyName, Email, Phone, Country, State, City, Street) values ('Flatley and Sons', 'pvallis5@bandcamp.com', '479-394-1791', 'Poland', null, 'Wola Uhruska', '04 Aberg Pass');
-insert into ProductionCompany (CompanyName, Email, Phone, Country, State, City, Street) values ('Bashirian LLC', 'tperassi6@virginia.edu', '146-364-3808', 'Ukraine', null, 'Lebedyn', '53324 Mockingbird Way');
-insert into ProductionCompany (CompanyName, Email, Phone, Country, State, City, Street) values ('Stiedemann-Lubowitz', 'ejudron7@nasa.gov', '821-710-7021', 'China', null, 'Tieba', '539 Bashford Center');
-insert into ProductionCompany (CompanyName, Email, Phone, Country, State, City, Street) values ('Ziemann, Sanford and Hansen', 'chuws8@google.com.br', '456-207-9441', 'China', null, 'Qian’an', '02 Lakewood Road');
-insert into ProductionCompany (CompanyName, Email, Phone, Country, State, City, Street) values ('Nicolas-Boyle', 'agyngyll9@marketwatch.com', '779-169-1847', 'Portugal', 'Leiria', 'Jardoeira', '65 Gateway Lane');
-
-
+DROP TABLE IF EXISTS produced_by_comp;
 create table produced_by_comp (
 	MovieID VARCHAR(50),
 	StudioID VARCHAR(50),
@@ -484,8 +477,9 @@ insert into produced_by_comp (MovieID, StudioID) values ('5', '9');
 insert into produced_by_comp (MovieID, StudioID) values ('24', '1');
 insert into produced_by_comp (MovieID, StudioID) values ('2', '2');
 
+DROP TABLE IF EXISTS user;
 create table user (
-  userid INTEGER AUTO_INCREMENT NOT NULL,
+  userid INTEGER NOT NULL,
   FirstName VARCHAR(50),
 	LastName VARCHAR(50),
 	email VARCHAR(50),
@@ -494,67 +488,68 @@ create table user (
   PRIMARY KEY(userid),
   UNIQUE(email)
 );
-insert into user (FirstName, LastName, email, password) values ('Mara', 'Gounin', 'mgounin0@washingtonpost.com', 'efK9Gw6BLvW0');
-insert into user (FirstName, LastName, email, password) values ('Keane', 'Jerrolt', 'kjerrolt1@goodreads.com', '4bKsk7An');
-insert into user (FirstName, LastName, email, password) values ('Case', 'Gainsboro', 'cgainsboro2@thetimes.co.uk', 'vy6pci');
-insert into user (FirstName, LastName, email, password) values ('Emmalynne', 'Dearlove', 'edearlove3@yahoo.com', 'krUhX1bhS');
-insert into user (FirstName, LastName, email, password) values ('Dagmar', 'Pennycuick', 'dpennycuick4@instagram.com', 'sSNdteRop');
-insert into user (FirstName, LastName, email, password) values ('Roscoe', 'Pawden', 'rpawden5@zdnet.com', 'DIfjNs4UeA');
-insert into user (FirstName, LastName, email, password) values ('Krissy', 'Finden', 'kfinden6@xrea.com', 'Ddjsd4bP');
-insert into user (FirstName, LastName, email, password) values ('Christabella', 'Giovannilli', 'cgiovannilli7@wix.com', 'w5HgRyd');
-insert into user (FirstName, LastName, email, password) values ('Norma', 'Gramer', 'ngramer8@ehow.com', 'zsjMuCKN1H');
-insert into user (FirstName, LastName, email, password) values ('Lynde', 'Nekrews', 'lnekrews9@scribd.com', 'N848Z8');
-insert into user (FirstName, LastName, email, password) values ('Gleda', 'Perkinson', 'gperkinsona@free.fr', 'QQ5bl2oz0');
-insert into user (FirstName, LastName, email, password) values ('Johnette', 'Corringham', 'jcorringhamb@technorati.com', '3hHw3L50SK');
-insert into user (FirstName, LastName, email, password) values ('Harold', 'Danford', 'hdanfordc@360.cn', 'Q4NQcDe1');
-insert into user (FirstName, LastName, email, password) values ('Alikee', 'Halfacree', 'ahalfacreed@cpanel.net', 'hN5NSF');
-insert into user (FirstName, LastName, email, password) values ('Adelina', 'Shoebottom', 'ashoebottome@zimbio.com', 'HEnd9poWRov');
-insert into user (FirstName, LastName, email, password) values ('Clo', 'Clifford', 'ccliffordf@eepurl.com', 'Y68eHVPn0FV');
-insert into user (FirstName, LastName, email, password) values ('Irma', 'Griffe', 'igriffeg@fc2.com', 'xATHFyhMURqh');
-insert into user (FirstName, LastName, email, password) values ('Hyacinth', 'Luttger', 'hluttgerh@goodreads.com', 'CNx495');
-insert into user (FirstName, LastName, email, password) values ('Parry', 'Sollon', 'psolloni@youtu.be', 'NMWyjZvL8fu');
-insert into user (FirstName, LastName, email, password) values ('Myrlene', 'Cobbe', 'mcobbej@theatlantic.com', 'v31KOl7RE');
-insert into user (FirstName, LastName, email, password) values ('Dugald', 'Duigan', 'dduigank@ucoz.ru', '5O4YPqNdOroA');
-insert into user (FirstName, LastName, email, password) values ('Natalya', 'Loakes', 'nloakesl@diigo.com', 'aswENO8qV6J8');
-insert into user (FirstName, LastName, email, password) values ('Jamaal', 'Orteu', 'jorteum@fotki.com', 'XBptIuL');
-insert into user (FirstName, LastName, email, password) values ('Rayna', 'Galpin', 'rgalpinn@google.com.hk', 'pTm44AL');
-insert into user (FirstName, LastName, email, password) values ('Shelley', 'Aubury', 'sauburyo@mysql.com', 'ksvgjU');
-insert into user (FirstName, LastName, email, password) values ('Bryan', 'Lillecrap', 'blillecrapp@amazon.co.jp', 'wk6skPWiG');
-insert into user (FirstName, LastName, email, password) values ('Shell', 'Geistbeck', 'sgeistbeckq@hexun.com', 'oKsJYtEkF5N8');
-insert into user (FirstName, LastName, email, password) values ('Derron', 'Francesc', 'dfrancescr@dagondesign.com', 'VZJecud');
-insert into user (FirstName, LastName, email, password) values ('Carmen', 'Eckels', 'ceckelss@google.pl', 'iAGINBZDVI');
-insert into user (FirstName, LastName, email, password) values ('Dani', 'Charlewood', 'dcharlewoodt@storify.com', 'ckSk7uftl');
-insert into user (FirstName, LastName, email, password) values ('Zachery', 'Duthie', 'zduthieu@typepad.com', 'K3JMECL');
-insert into user (FirstName, LastName, email, password) values ('Johny', 'Shirtliff', 'jshirtliffv@sciencedaily.com', 'tE3IiK');
-insert into user (FirstName, LastName, email, password) values ('Robbi', 'Basset', 'rbassetw@telegraph.co.uk', '7NFxIqWZyNw');
-insert into user (FirstName, LastName, email, password) values ('Quent', 'Bauser', 'qbauserx@google.es', 'g8tCUTKqnVXr');
-insert into user (FirstName, LastName, email, password) values ('Sarette', 'Donoghue', 'sdonoghuey@rediff.com', 'IJffiUPq');
-insert into user (FirstName, LastName, email, password) values ('Tracie', 'Geikie', 'tgeikiez@posterous.com', 'NxkwRL2a0');
-insert into user (FirstName, LastName, email, password) values ('Rodrick', 'Gibbins', 'rgibbins10@xing.com', 'aKNsb1');
-insert into user (FirstName, LastName, email, password) values ('Carmen', 'Roussel', 'croussel11@wunderground.com', '55s1REg1t4');
-insert into user (FirstName, LastName, email, password) values ('Stacey', 'Karoly', 'skaroly12@spotify.com', 'MLNOy6f');
-insert into user (FirstName, LastName, email, password) values ('Edvard', 'Berrisford', 'eberrisford13@goo.ne.jp', 'tsCYUccEHnk8');
-insert into user (FirstName, LastName, email, password) values ('Merrilee', 'Beetles', 'mbeetles14@barnesandnoble.com', 'T9CSEZrjs7F');
-insert into user (FirstName, LastName, email, password) values ('Jessalyn', 'Luker', 'jluker15@weebly.com', 'aYuCCW');
-insert into user (FirstName, LastName, email, password) values ('Ambrose', 'Gyngyll', 'agyngyll16@apple.com', 'avPi9VO');
-insert into user (FirstName, LastName, email, password) values ('Sunny', 'Moyles', 'smoyles17@moonfruit.com', 'h5L2nY1ujZ');
-insert into user (FirstName, LastName, email, password) values ('Elisa', 'Hanselmann', 'ehanselmann18@ycombinator.com', 'M250SLPBcL');
-insert into user (FirstName, LastName, email, password) values ('Jobye', 'McCome', 'jmccome19@acquirethisname.com', 'YCi0KpZA');
-insert into user (FirstName, LastName, email, password) values ('Maurise', 'Denning', 'mdenning1a@gizmodo.com', 'Mr2sYeRPO');
-insert into user (FirstName, LastName, email, password) values ('Tucker', 'Steane', 'tsteane1b@psu.edu', 'EN6frwpZG');
-insert into user (FirstName, LastName, email, password) values ('Jermayne', 'Terrington', 'jterrington1c@goodreads.com', 'f66X2QW');
-insert into user (FirstName, LastName, email, password) values ('Ninetta', 'Hacking', 'nhacking1d@jimdo.com', 'U9l4uM');
-insert into user (FirstName, LastName, email, password) values ('Gilly', 'Shepherdson', 'gshepherdson1e@samsung.com', 'a5s1XHT');
-insert into user (FirstName, LastName, email, password) values ('Rutledge', 'Scottrell', 'rscottrell1f@gravatar.com', 'nl7yLZ');
-insert into user (FirstName, LastName, email, password) values ('Jens', 'Zuanelli', 'jzuanelli1g@bluehost.com', 'c5fLiH0h9xb');
-insert into user (FirstName, LastName, email, password) values ('Wilmar', 'Tomney', 'wtomney1h@engadget.com', '4oHTGTRCk');
-insert into user (FirstName, LastName, email, password) values ('Beret', 'Zoppie', 'bzoppie1i@virginia.edu', 'E4nKEXi');
-insert into user (FirstName, LastName, email, password) values ('Alysa', 'Vaudin', 'avaudin1j@clickbank.net', 'wNYBxNeQE5F');
-insert into user (FirstName, LastName, email, password) values ('Marin', 'Exter', 'mexter1k@springer.com', 'ucWpwfgC');
-insert into user (FirstName, LastName, email, password) values ('Kala', 'Dregan', 'kdregan1l@google.com.br', 'aNXPPPSCVd');
-insert into user (FirstName, LastName, email, password) values ('Susann', 'Lamball', 'slamball1m@twitter.com', 'Y3xu0CGNDmHl');
-insert into user (FirstName, LastName, email, password) values ('Justus', 'Orpyne', 'jorpyne1n@usnews.com', 'yfIkrvW');
+insert into users (userid, FirstName, LastName, email, password) values (1, 'Andros', 'Gamble', 'agamble0@acquirethisname.com', 'sWC1DGYfrHC8');
+insert into users (userid, FirstName, LastName, email, password) values (2, 'Sonny', 'Beamson', 'sbeamson1@ycombinator.com', 'uJjAibWcE7f');
+insert into users (userid, FirstName, LastName, email, password) values (3, 'Barth', 'Antonias', 'bantonias2@state.tx.us', 'X4YDyXaiu');
+insert into users (userid, FirstName, LastName, email, password) values (4, 'Mandy', 'Kemery', 'mkemery3@ucoz.ru', 'SMKKkZ');
+insert into users (userid, FirstName, LastName, email, password) values (5, 'Stephine', 'Redmore', 'sredmore4@ifeng.com', 'CkaNOjHhLY');
+insert into users (userid, FirstName, LastName, email, password) values (6, 'Berk', 'Neljes', 'bneljes5@sina.com.cn', 'LFSoiq');
+insert into users (userid, FirstName, LastName, email, password) values (7, 'Susana', 'Hilary', 'shilary6@quantcast.com', 'ngOYE7Ktvz0l');
+insert into users (userid, FirstName, LastName, email, password) values (8, 'Elnore', 'Burdis', 'eburdis7@netlog.com', 'rktdRX');
+insert into users (userid, FirstName, LastName, email, password) values (9, 'Mervin', 'Tesimon', 'mtesimon8@ca.gov', 'XpDBUis');
+insert into users (userid, FirstName, LastName, email, password) values (10, 'Jammie', 'Merritt', 'jmerritt9@ask.com', 'RGL3rih');
+insert into users (userid, FirstName, LastName, email, password) values (11, 'Quinn', 'Bortol', 'qbortola@craigslist.org', 'DUToeKsff3');
+insert into users (userid, FirstName, LastName, email, password) values (12, 'Teddie', 'Strickler', 'tstricklerb@senate.gov', '81Moviy');
+insert into users (userid, FirstName, LastName, email, password) values (13, 'Ingemar', 'Coppens', 'icoppensc@mysql.com', 'FzmC88Hgc9Qr');
+insert into users (userid, FirstName, LastName, email, password) values (14, 'Phil', 'Barajaz', 'pbarajazd@mayoclinic.com', 'CixhLvKV0');
+insert into users (userid, FirstName, LastName, email, password) values (15, 'Chrisy', 'Standing', 'cstandinge@taobao.com', 'LDiirN');
+insert into users (userid, FirstName, LastName, email, password) values (16, 'Ibrahim', 'Matonin', 'imatoninf@newsvine.com', 'zZzq6aFAS');
+insert into users (userid, FirstName, LastName, email, password) values (17, 'Riley', 'Kief', 'rkiefg@last.fm', 'ONEFroGOs');
+insert into users (userid, FirstName, LastName, email, password) values (18, 'Anna-diana', 'McKearnen', 'amckearnenh@cargocollective.com', 'gUg0ZD7vkO');
+insert into users (userid, FirstName, LastName, email, password) values (19, 'Belicia', 'Frere', 'bfrerei@dailymotion.com', 'noL4PIA');
+insert into users (userid, FirstName, LastName, email, password) values (20, 'Madonna', 'Kurdani', 'mkurdanij@drupal.org', 'bPtJz9XS');
+insert into users (userid, FirstName, LastName, email, password) values (21, 'Daren', 'Chazette', 'dchazettek@gmpg.org', '6wGc2m0W');
+insert into users (userid, FirstName, LastName, email, password) values (22, 'Tara', 'Meredyth', 'tmeredythl@senate.gov', 'Sc7VySI');
+insert into users (userid, FirstName, LastName, email, password) values (23, 'Kerrie', 'Foreman', 'kforemanm@tumblr.com', 'q4LB6T9');
+insert into users (userid, FirstName, LastName, email, password) values (24, 'Jodee', 'Rosenblum', 'jrosenblumn@discovery.com', 'uGeXU2O5');
+insert into users (userid, FirstName, LastName, email, password) values (25, 'Donica', 'Kings', 'dkingso@google.com.br', '8PVlhwZ');
+insert into users (userid, FirstName, LastName, email, password) values (26, 'Glad', 'Lemmer', 'glemmerp@free.fr', '7VXoXiKbjnWB');
+insert into users (userid, FirstName, LastName, email, password) values (27, 'Pat', 'Burgyn', 'pburgynq@nasa.gov', 'HBEPJRjD6xji');
+insert into users (userid, FirstName, LastName, email, password) values (28, 'Kirbie', 'Dugood', 'kdugoodr@businessweek.com', 'ws2dd4noNi');
+insert into users (userid, FirstName, LastName, email, password) values (29, 'Becca', 'Frusher', 'bfrushers@artisteer.com', 'xLYEIN4');
+insert into users (userid, FirstName, LastName, email, password) values (30, 'Johnathan', 'Scholz', 'jscholzt@over-blog.com', 'kPIukgjNg7e');
+insert into users (userid, FirstName, LastName, email, password) values (31, 'Gretta', 'Kingsnorth', 'gkingsnorthu@vimeo.com', 'uLnNXw3yFh');
+insert into users (userid, FirstName, LastName, email, password) values (32, 'Jori', 'Gunson', 'jgunsonv@answers.com', 'Fs3fUwY');
+insert into users (userid, FirstName, LastName, email, password) values (33, 'Elana', 'Venny', 'evennyw@go.com', 'zhtWLrmuWk0');
+insert into users (userid, FirstName, LastName, email, password) values (34, 'Melesa', 'Cracoe', 'mcracoex@lulu.com', '70lQXPsnMm2Q');
+insert into users (userid, FirstName, LastName, email, password) values (35, 'Daveta', 'Poulney', 'dpoulneyy@hatena.ne.jp', 'BWIYTsk');
+insert into users (userid, FirstName, LastName, email, password) values (36, 'Pat', 'Baudains', 'pbaudainsz@epa.gov', 'vWwbBKA');
+insert into users (userid, FirstName, LastName, email, password) values (37, 'Nancee', 'Liccardi', 'nliccardi10@dailymotion.com', 'vcpzPdLd');
+insert into users (userid, FirstName, LastName, email, password) values (38, 'Barbie', 'Hush', 'bhush11@google.com.au', 'F0gFvc5oaLxC');
+insert into users (userid, FirstName, LastName, email, password) values (39, 'Lisbeth', 'Dillingstone', 'ldillingstone12@edublogs.org', 'bS7vrRgdb');
+insert into users (userid, FirstName, LastName, email, password) values (40, 'Florence', 'Pankettman', 'fpankettman13@un.org', 'ZpcyyeWM04SC');
+insert into users (userid, FirstName, LastName, email, password) values (41, 'Olivier', 'Wigzell', 'owigzell14@exblog.jp', 'Yp9pYvIL1u1');
+insert into users (userid, FirstName, LastName, email, password) values (42, 'Brooke', 'Jagielski', 'bjagielski15@hubpages.com', 'OauvWZ5');
+insert into users (userid, FirstName, LastName, email, password) values (43, 'Milo', 'Sivell', 'msivell16@ebay.co.uk', 'Je7qx8vpJIAi');
+insert into users (userid, FirstName, LastName, email, password) values (44, 'Yancy', 'Allsopp', 'yallsopp17@google.pl', 'DV5ouked');
+insert into users (userid, FirstName, LastName, email, password) values (45, 'Dacia', 'Illsley', 'dillsley18@com.com', '1QdEu6h');
+insert into users (userid, FirstName, LastName, email, password) values (46, 'Nester', 'Darte', 'ndarte19@utexas.edu', 'k2qyQW9');
+insert into users (userid, FirstName, LastName, email, password) values (47, 'Harold', 'Havercroft', 'hhavercroft1a@bbb.org', '6uBdBSFN');
+insert into users (userid, FirstName, LastName, email, password) values (48, 'Janna', 'Ewan', 'jewan1b@thetimes.co.uk', 'gfA0ktRpcs');
+insert into users (userid, FirstName, LastName, email, password) values (49, 'Dyanna', 'Woodhead', 'dwoodhead1c@nydailynews.com', 'GxL1MrgcU');
+insert into users (userid, FirstName, LastName, email, password) values (50, 'Creighton', 'Teers', 'cteers1d@senate.gov', 'w1LIc6s');
+insert into users (userid, FirstName, LastName, email, password) values (51, 'Renato', 'Laetham', 'rlaetham1e@narod.ru', 'jKSHdZu');
+insert into users (userid, FirstName, LastName, email, password) values (52, 'Kit', 'McCreary', 'kmccreary1f@flickr.com', 'vAyQaYBMA6H');
+insert into users (userid, FirstName, LastName, email, password) values (53, 'Hatty', 'Labusquiere', 'hlabusquiere1g@elpais.com', 'ti0Y9O9Z');
+insert into users (userid, FirstName, LastName, email, password) values (54, 'Nettie', 'Gosling', 'ngosling1h@java.com', 'k843NNUpCW');
+insert into users (userid, FirstName, LastName, email, password) values (55, 'Rouvin', 'Motten', 'rmotten1i@bing.com', 'HNkBTIfyJ');
+insert into users (userid, FirstName, LastName, email, password) values (56, 'Orran', 'Crosetto', 'ocrosetto1j@ca.gov', 'iljb6hOZtD1G');
+insert into users (userid, FirstName, LastName, email, password) values (57, 'Karlotta', 'Camillo', 'kcamillo1k@hibu.com', 'BRkS2F');
+insert into users (userid, FirstName, LastName, email, password) values (58, 'Cami', 'Kedge', 'ckedge1l@so-net.ne.jp', 'PwkmAHmIk');
+insert into users (userid, FirstName, LastName, email, password) values (59, 'Ase', 'Fontanet', 'afontanet1m@samsung.com', 'j0dNCyrhR');
+insert into users (userid, FirstName, LastName, email, password) values (60, 'Gawen', 'Whorf', 'gwhorf1n@lycos.com', 'q0pjpUc');
 
+DROP TABLE IF EXISTS liked_movies;
 CREATE TABLE liked_movies(
     movieId int NOT NULL,
     userId int NOT NULL,
@@ -664,6 +659,7 @@ insert into liked_movies (MovieID, UserID) values ('27', '42');
 insert into liked_movies (MovieID, UserID) values ('21', '54');
 insert into liked_movies (MovieID, UserID) values ('3', '47');
 
+DROP TABLE IF EXISTS watched_movies;
 CREATE TABLE watched_movies(
     movieId int NOT NULL,
     userId int NOT NULL,
@@ -774,8 +770,9 @@ insert into watched_movies (MovieID, UserID) values ('39', '7');
 insert into watched_movies (MovieID, UserID) values ('3', '54');
 insert into watched_movies (MovieID, UserID) values ('25', '12');
 
+DROP TABLE IF EXISTS Producer;
 CREATE TABLE Producer(
-  producerid INTEGER AUTO_INCREMENT NOT NULL,
+  producerid INTEGER NOT NULL,
 	FirstName VARCHAR(50),
 	LastName VARCHAR(50),
   email VARCHAR(50),
@@ -787,47 +784,48 @@ CREATE TABLE Producer(
     UNIQUE(email, phone)
 );
 
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Edi', 'Mafham', 'emafham0@bbc.co.uk', 'Non-binary', 'United States', '571-645-4201');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Glennis', 'Soff', 'gsoff1@pinterest.com', 'Female', 'Japan', '979-532-3257');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Lauralee', 'Chrystal', 'lchrystal2@github.com', 'Female', 'Indonesia', '815-456-3435');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Sophia', 'Gregorin', 'sgregorin3@ovh.net', 'Polygender', 'Afghanistan', '523-260-2478');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Odie', 'Markie', 'omarkie4@eventbrite.com', 'Male', 'Indonesia', '402-943-1795');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Linzy', 'Maneylaws', 'lmaneylaws5@dmoz.org', 'Female', 'Estonia', '187-772-7268');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Cirillo', 'Tollemache', 'ctollemache6@canalblog.com', 'Male', 'Sweden', '626-687-2378');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Malia', 'Skein', 'mskein7@telegraph.co.uk', 'Female', 'Philippines', '704-966-9812');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Claudina', 'Mochar', 'cmochar8@wsj.com', 'Female', 'Italy', '924-280-2283');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Lorianna', 'Jeratt', 'ljeratt9@technorati.com', 'Female', 'Indonesia', '764-809-4211');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Amalia', 'Bewsey', 'abewseya@cafepress.com', 'Female', 'Botswana', '159-559-4557');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Nigel', 'Pagitt', 'npagittb@liveinternet.ru', 'Bigender', 'China', '285-816-2328');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Elwin', 'Charle', 'echarlec@ucsd.edu', 'Male', 'France', '943-466-3079');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Alessandro', 'Twentyman', 'atwentymand@statcounter.com', 'Male', 'Libya', '768-983-6080');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Minerva', 'Sedwick', 'msedwicke@accuweather.com', 'Female', 'Tanzania', '621-103-5806');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Laure', 'Dinnage', 'ldinnagef@jigsy.com', 'Female', 'Japan', '220-946-7898');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Noell', 'Learmont', 'nlearmontg@reference.com', 'Female', 'Thailand', '659-118-6943');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Bobbette', 'Lapere', 'blapereh@epa.gov', 'Genderfluid', 'Venezuela', '462-918-6021');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Ariel', 'Scarr', 'ascarri@homestead.com', 'Female', 'China', '291-440-2850');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Tamar', 'Liddington', 'tliddingtonj@pcworld.com', 'Female', 'Cameroon', '484-764-0494');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Blinni', 'McCome', 'bmccomek@un.org', 'Female', 'Philippines', '943-817-5586');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Rock', 'Yurkov', 'ryurkovl@skyrock.com', 'Male', 'Poland', '715-932-3599');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Brittan', 'Kisar', 'bkisarm@fema.gov', 'Female', 'Portugal', '939-218-8188');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Ephrayim', 'Langer', 'elangern@joomla.org', 'Male', 'Palestinian Territory', '106-887-4861');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Dyanna', 'Gurery', 'dgureryo@ning.com', 'Female', 'Egypt', '812-106-4404');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Marys', 'Phillcox', 'mphillcoxp@unc.edu', 'Female', 'Brazil', '454-856-8686');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Car', 'Brodeau', 'cbrodeauq@bluehost.com', 'Male', 'Indonesia', '385-925-4235');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Shannon', 'Gerard', 'sgerardr@xinhuanet.com', 'Male', 'Vietnam', '124-396-3172');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Haskell', 'Shrieves', 'hshrievess@github.com', 'Male', 'Indonesia', '336-513-2244');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Clerkclaude', 'Shayes', 'cshayest@bigcartel.com', 'Male', 'Greece', '749-261-8370');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Alexine', 'Pendre', 'apendreu@goodreads.com', 'Agender', 'United States', '304-896-0238');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Evonne', 'Derle', 'ederlev@comcast.net', 'Female', 'China', '905-619-7038');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Rozanne', 'Tunnicliff', 'rtunnicliffw@posterous.com', 'Female', 'Poland', '833-302-5042');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Gracie', 'Marney', 'gmarneyx@mac.com', 'Female', 'Peru', '801-851-6385');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Kirbie', 'Cowles', 'kcowlesy@princeton.edu', 'Polygender', 'China', '846-987-4776');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Bear', 'Oaten', 'boatenz@mashable.com', 'Male', 'Portugal', '575-132-7914');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Marten', 'Derry', 'mderry10@gov.uk', 'Male', 'Philippines', '489-626-7335');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Brena', 'Mullarkey', 'bmullarkey11@4shared.com', 'Female', 'Ukraine', '958-795-2988');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Connie', 'Kirkhouse', 'ckirkhouse12@cam.ac.uk', 'Female', 'Russia', '593-103-7821');
-insert into Producer (FirstName, LastName, email, gender, country, phone) values ('Nikki', 'Nyssen', 'nnyssen13@gizmodo.com', 'Male', 'Canada', '743-281-3820');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (1, 'Jessie', 'Swarbrick', 'jswarbrick0@buzzfeed.com', 'Male', 'Morocco', '732-797-3511');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (2, 'Gideon', 'Janauschek', 'gjanauschek1@domainmarket.com', 'Genderfluid', 'Portugal', '543-204-2041');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (3, 'Rhiamon', 'Kerswell', 'rkerswell2@independent.co.uk', 'Agender', 'Russia', '192-501-2691');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (4, 'Alverta', 'MacCrann', 'amaccrann3@tuttocitta.it', 'Female', 'Latvia', '359-610-4544');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (5, 'Nappy', 'O''Corhane', 'nocorhane4@kickstarter.com', 'Male', 'Canada', '706-346-0701');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (6, 'Norry', 'Ransbury', 'nransbury5@squidoo.com', 'Male', 'Russia', '445-498-9638');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (7, 'Laurette', 'Kentish', 'lkentish6@businessinsider.com', 'Female', 'Poland', '577-371-6406');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (8, 'Ruby', 'Florey', 'rflorey7@newyorker.com', 'Female', 'Indonesia', '733-168-8254');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (9, 'Robyn', 'Gilbane', 'rgilbane8@rediff.com', 'Female', 'China', '262-147-9824');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (10, 'Jennine', 'Eilers', 'jeilers9@paginegialle.it', 'Female', 'China', '343-768-9349');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (11, 'Dudley', 'Joannidi', 'djoannidia@apache.org', 'Male', 'Vietnam', '994-136-2997');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (12, 'Lion', 'Danilishin', 'ldanilishinb@gizmodo.com', 'Male', 'China', '354-437-5412');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (13, 'Bathsheba', 'Pohlak', 'bpohlakc@answers.com', 'Female', 'Thailand', '154-623-5765');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (14, 'Georgiana', 'Espino', 'gespinod@ucoz.ru', 'Female', 'China', '246-467-4621');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (15, 'Pietra', 'Webb-Bowen', 'pwebbbowene@indiatimes.com', 'Female', 'China', '112-907-2783');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (16, 'Anatole', 'Whatley', 'awhatleyf@tiny.cc', 'Male', 'Indonesia', '452-630-4606');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (17, 'Jerome', 'Brok', 'jbrokg@lycos.com', 'Male', 'Tunisia', '272-527-6776');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (18, 'Robin', 'McKevitt', 'rmckevitth@cisco.com', 'Female', 'United States', '850-822-4943');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (19, 'Denny', 'Bleaden', 'dbleadeni@wisc.edu', 'Female', 'Russia', '336-428-8553');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (20, 'Marilee', 'Rosberg', 'mrosbergj@123-reg.co.uk', 'Female', 'China', '189-142-0331');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (21, 'Eric', 'Gowler', 'egowlerk@cbsnews.com', 'Male', 'Philippines', '762-436-6965');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (22, 'Giffy', 'Gowland', 'ggowlandl@europa.eu', 'Male', 'Russia', '918-177-5230');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (23, 'Donica', 'Wybourne', 'dwybournem@blogtalkradio.com', 'Non-binary', 'Sweden', '518-469-2055');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (24, 'Graehme', 'Eversfield', 'geversfieldn@microsoft.com', 'Male', 'Poland', '264-978-1293');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (25, 'Olivia', 'Nottram', 'onottramo@aboutads.info', 'Female', 'Vietnam', '821-774-6158');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (26, 'Herculie', 'Ashe', 'hashep@canalblog.com', 'Male', 'Indonesia', '548-289-6870');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (27, 'Kincaid', 'Morrish', 'kmorrishq@cpanel.net', 'Male', 'Cuba', '131-644-0604');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (28, 'Benjy', 'Juan', 'bjuanr@squidoo.com', 'Male', 'Zambia', '667-522-5401');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (29, 'Goldarina', 'Marney', 'gmarneys@oakley.com', 'Genderfluid', 'China', '696-795-1565');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (30, 'Jory', 'Roggers', 'jroggerst@miitbeian.gov.cn', 'Male', 'China', '246-612-3193');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (31, 'Ermengarde', 'Paliser', 'epaliseru@skyrock.com', 'Female', 'Malaysia', '738-985-5235');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (32, 'Chaddie', 'Sommerton', 'csommertonv@toplist.cz', 'Male', 'France', '933-471-6892');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (33, 'Cody', 'Brennon', 'cbrennonw@tmall.com', 'Male', 'China', '869-538-8243');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (34, 'Renelle', 'Sleep', 'rsleepx@acquirethisname.com', 'Female', 'Grenada', '824-386-9377');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (35, 'Killy', 'Coult', 'kcoulty@cbsnews.com', 'Male', 'Portugal', '807-847-2863');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (36, 'Jean', 'Thurlow', 'jthurlowz@creativecommons.org', 'Female', 'Pakistan', '149-788-4488');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (37, 'Roch', 'Ahmed', 'rahmed10@gnu.org', 'Female', 'United States', '202-764-4063');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (38, 'Leonidas', 'Neave', 'lneave11@sohu.com', 'Male', 'Czech Republic', '738-156-6876');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (39, 'Stephanie', 'Mumberson', 'smumberson12@walmart.com', 'Female', 'China', '918-623-5914');
+insert into Producer (producerID, FirstName, LastName, email, gender, country, phone) values (40, 'Lorita', 'Mattiessen', 'lmattiessen13@ucla.edu', 'Female', 'Canada', '343-631-6600');
 
+DROP TABLE IF EXISTS produced_by;
 CREATE TABLE produced_by(
   movieId int NOT NULL,
   producerId int NOT NULL,
@@ -897,8 +895,9 @@ insert into produced_by (MovieID, producerid) values ('24', '29');
 insert into produced_by (MovieID, producerid) values ('5', '15');
 insert into produced_by (MovieID, producerid) values ('33', '19');
 
+DROP TABLE IF EXISTS StreamingCompany;
 CREATE TABLE StreamingCompany(
-  companyid INTEGER AUTO_INCREMENT NOT NULL,
+  companyid INTEGER NOT NULL,
 	CompanyName VARCHAR(50),
 	email VARCHAR(50),
 	Phone VARCHAR(50),
@@ -907,47 +906,48 @@ CREATE TABLE StreamingCompany(
   PRIMARY KEY(companyid),
   UNIQUE(email, phone)
 );
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Heller, McCullough and Raynor', 'cthurling0@theglobeandmail.com', '513-320-7389', 'cbslocal.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Leffler LLC', 'pallbon1@intel.com', '559-500-3269', 'nationalgeographic.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Beer-Dietrich', 'ldrury2@buzzfeed.com', '639-524-6445', 'odnoklassniki.ru');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Terry, Harber and Haag', 'bsummerson3@constantcontact.com', '847-430-2057', 'amazon.de');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Reilly, Schmitt and Schiller', 'toverlow4@cocolog-nifty.com', '362-921-9556', 'si.edu');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Lind LLC', 'schart5@slashdot.org', '770-110-7953', 'businesswire.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Lowe, Kiehn and Runolfsson', 'fpichan6@salon.com', '814-136-1088', 'chron.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Bernhard Inc', 'cjull7@guardian.co.uk', '840-878-0962', 'va.gov');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Smitham, Turcotte and Harris', 'asafhill8@kickstarter.com', '435-680-7917', '1688.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Berge, Willms and Becker', 'egrayley9@sun.com', '276-777-2104', 'hugedomains.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Sauer-King', 'etutina@shinystat.com', '896-514-5918', '360.cn');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Zemlak, Hackett and Zulauf', 'aellingsworthb@naver.com', '741-507-7317', 'senate.gov');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Rowe, Anderson and Denesik', 'lfarrearsc@bbb.org', '769-635-6007', 'google.de');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Walter, Dibbert and Franecki', 'ncammiemiled@irs.gov', '604-412-6405', 'flavors.me');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Padberg, Jenkins and Breitenberg', 'jlarcieree@bandcamp.com', '587-465-5406', 'constantcontact.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Ferry-Ritchie', 'jkobschf@indiegogo.com', '672-756-6219', 'uol.com.br');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Gleason and Sons', 'kmckissackg@answers.com', '988-442-1446', 'ustream.tv');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Feil-Walsh', 'mbenfordh@alexa.com', '308-568-9016', 'goodreads.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Rogahn LLC', 'aspreadburyi@indiegogo.com', '810-138-8119', 'house.gov');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Rolfson, Barrows and Hettinger', 'rortj@scientificamerican.com', '104-776-8988', 'goo.ne.jp');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Larson and Sons', 'pberrisfordk@biblegateway.com', '472-129-8158', 'pagesperso-orange.fr');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Gislason Group', 'dyegorkovl@chicagotribune.com', '141-976-8023', 'cornell.edu');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Gulgowski-Gibson', 'cerrolm@github.com', '381-225-2432', 'mail.ru');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Bradtke-Collins', 'gruusan@washington.edu', '801-389-0527', 'dedecms.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Schumm, Dibbert and Funk', 'kselewayo@yelp.com', '378-190-2305', 'smugmug.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Ziemann-Gaylord', 'nbutep@opensource.org', '553-233-2067', 'dot.gov');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Botsford LLC', 'wsnasdellq@trellian.com', '587-774-2933', 'mail.ru');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Von-Jones', 'ayellandr@moonfruit.com', '447-730-6772', 'netscape.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Tremblay, Ebert and Heller', 'rmcfauls@blogs.com', '654-212-0691', 'wunderground.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Jones Group', 'fmoniert@zdnet.com', '185-167-2031', 'jigsy.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Effertz-Doyle', 'ecourtoisu@nsw.gov.au', '904-783-6921', 'stanford.edu');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Olson Inc', 'trohanv@e-recht24.de', '213-607-1694', 'linkedin.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Goyette LLC', 'vmcgilbonw@seesaa.net', '176-927-2762', 'tinyurl.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Runolfsdottir LLC', 'wbesquex@vk.com', '127-242-3331', 'fda.gov');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Feil, Armstrong and Borer', 'dmcconaghyy@vimeo.com', '508-334-5556', 'nyu.edu');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Bahringer Inc', 'clyddyardz@howstuffworks.com', '832-843-7934', 'blogs.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Predovic, Sporer and Towne', 'dlevermore10@privacy.gov.au', '179-567-6092', 'nationalgeographic.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Windler Group', 'lcobelli11@vistaprint.com', '962-848-6327', 'rediff.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Wilderman-Boehm', 'emeddings12@cnbc.com', '109-393-5058', 'marriott.com');
-insert into StreamingCompany (CompanyName, email, Phone, Link) values ('Moen and Sons', 'mearp13@phpbb.com', '466-268-7810', 'shop-pro.jp');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (1, 'Lubowitz-Ritchie', 'boates0@princeton.edu', '945-963-7734', 'infoseek.co.jp');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (2, 'Hamill-Ziemann', 'blovejoy1@123-reg.co.uk', '497-774-0977', 'photobucket.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (3, 'Balistreri, Reichel and Kertzmann', 'cjeaves2@nationalgeographic.com', '980-428-2117', 'oakley.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (4, 'Hammes-Glover', 'cpennacci3@stanford.edu', '816-319-4499', 'huffingtonpost.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (5, 'Schmitt-Bernhard', 'cheadan4@wired.com', '207-306-2018', 'businessweek.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (6, 'Gorczany, Wolff and Leffler', 'mtrees5@yellowpages.com', '744-899-7405', 'elpais.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (7, 'Jones, Bauch and Gorczany', 'evreiberg6@engadget.com', '799-777-9203', 'blogspot.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (8, 'Little-Sanford', 'bberriman7@blinklist.com', '679-499-7308', 'house.gov');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (9, 'Dibbert Inc', 'mconnew8@vistaprint.com', '256-932-4954', 'live.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (10, 'Gleason, Little and O''Hara', 'dtroop9@mozilla.org', '131-319-0690', 'free.fr');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (11, 'Schimmel-Crooks', 'kmccarrya@berkeley.edu', '390-367-2397', 'tripod.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (12, 'Kassulke, Jacobs and Bradtke', 'tcortnayb@slashdot.org', '382-258-3510', 'symantec.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (13, 'Strosin LLC', 'davrahmc@networkadvertising.org', '673-326-2432', 'imdb.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (14, 'Cormier, Littel and Breitenberg', 'gfarrensd@example.com', '254-217-6040', 'jugem.jp');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (15, 'Ullrich, Witting and Homenick', 'mgontiere@sbwire.com', '265-500-9820', 'instagram.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (16, 'Schuster Inc', 'jbromontf@ehow.com', '430-402-7772', 'foxnews.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (17, 'Becker Group', 'echillesg@shutterfly.com', '850-553-1316', 'xing.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (18, 'Bartell, Olson and Tremblay', 'zleishmanh@163.com', '848-862-4959', 'phoca.cz');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (19, 'Fahey-Klocko', 'mbielfeldi@nbcnews.com', '452-732-6418', 'ning.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (20, 'Hettinger Group', 'skubisj@techcrunch.com', '258-138-7600', 'sun.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (21, 'Kovacek and Sons', 'tbarnacloughk@archive.org', '958-652-4409', 'over-blog.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (22, 'Smith, Keeling and Goyette', 'claisel@ed.gov', '855-485-5233', 'cmu.edu');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (23, 'Botsford-Hammes', 'gpautardm@dedecms.com', '599-602-1573', 'amazon.co.uk');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (24, 'Reinger, Pollich and Padberg', 'shonischn@chicagotribune.com', '591-182-1818', 'comsenz.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (25, 'Orn Inc', 'lfarncombeo@vk.com', '312-639-0831', 'globo.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (26, 'Fisher, Terry and Kozey', 'lrankcomp@weebly.com', '212-483-2452', 'spiegel.de');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (27, 'Mosciski, Ernser and Leffler', 'jvoadenq@dmoz.org', '642-995-8112', 'newsvine.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (28, 'Windler-O''Keefe', 'gaddeycottr@discovery.com', '177-380-9134', 'hatena.ne.jp');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (29, 'Kuhlman Inc', 'jcarvers@opensource.org', '108-824-7490', 'google.cn');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (30, 'Kessler, Bogan and Simonis', 'bsoggt@e-recht24.de', '224-383-6747', 'drupal.org');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (31, 'Murray, Rodriguez and Lynch', 'kpinckedu@amazon.co.jp', '127-324-0576', 'cdbaby.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (32, 'Swaniawski, Donnelly and Purdy', 'nrennyv@desdev.cn', '839-810-6418', 'dedecms.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (33, 'Krajcik Inc', 'ksansumw@stumbleupon.com', '713-943-0689', 'zimbio.com');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (34, 'Schultz Inc', 'mpesslerx@sciencedaily.com', '694-850-3936', 'goo.gl');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (35, 'Weissnat LLC', 'ydukery@live.com', '347-725-4814', 'google.nl');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (36, 'Mann, Paucek and Koch', 'graxworthyz@github.com', '578-535-6530', 'cmu.edu');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (37, 'Reichert, Ferry and Donnelly', 'trichford10@uiuc.edu', '205-162-8271', 'yahoo.co.jp');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (38, 'Kemmer LLC', 'bday11@4shared.com', '662-114-2997', 'ca.gov');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (39, 'Jakubowski, Schulist and Lind', 'cmccoughan12@yellowbook.com', '912-212-5715', 'ustream.tv');
+insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values (40, 'Ullrich Inc', 'lvise13@facebook.com', '590-527-4775', 'mail.ru');
 
+DROP TABLE IF EXISTS streamed_movies;
 CREATE TABLE streamed_movies (
     movieId int NOT NULL,
     StreamingCompanyid int NOT NULL,

@@ -62,7 +62,7 @@ def get_top4_movies(studioid):
 
 # get all movies from desired streaming service ranked by popularity (number of likes)
 @movies.route('/moviesstreamed/<streamingcompid>')
-def get_actors(streamingcompid):
+def moviesstreamed(streamingcompid):
     cursor = db.get_db().cursor()
     query = '''
         SELECT m.Title, m.description, (a.FirstName, a.LastName as ActorName), 
@@ -75,6 +75,37 @@ def get_actors(streamingcompid):
     '''
     cursor.execute(query)
        # grab the column headers from the returned data
+    column_headers = [x[0] for x in cursor.description]
+
+    # create an empty dictionary object to use in 
+    # putting column headers together with data
+    json_data = []
+
+    # fetch all the data from the cursor
+    theData = cursor.fetchall()
+
+    # for each of the rows, zip the data elements together with
+    # the column headers. 
+    for row in theData:
+        json_data.append(dict(zip(column_headers, row)))
+
+    return jsonify(json_data)
+
+# Get top 4 movies produced by rivalry production company
+@movies.route('/movies', methods=['GET'])
+def get_movies():
+    # get a cursor object from database
+    cursor = db.get_db().cursor()
+
+    query = '''
+    SELECT *
+    FROM test
+    '''
+
+    # use cursor to query the database for a list of products
+    cursor.execute(query)
+
+    # grab the column headers from the returned data
     column_headers = [x[0] for x in cursor.description]
 
     # create an empty dictionary object to use in 
