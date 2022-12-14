@@ -64,13 +64,13 @@ def get_top4_movies(studioid):
 @movies.route('/moviesstreamed/<streamingcompid>')
 def moviesstreamed(streamingcompid):
     cursor = db.get_db().cursor()
-    query = ('SELECT m.Title, m.Descriptioin, (a.FirstName, a.LastName as ActorName), \
+    query = ('SELECT m.Title, m.Description, (a.FirstName, a.LastName as ActorName), \
         FROM Movie m JOIN starred_movies s ON m.MovieID = s.MovieID \
         JOIN actors a ON a.ActorID = s.ActorID \
         JOIN streamed_movies sm ON sm.MovieID = m.MovieID \
         JOIN StreamingCompany sc on sm.StreamingCompanyid = sc.companyid \
-        WHERE m.streamingcompanyid = {0}'.format(streamingcompid) \
-        ORDER BY m.NumOfLikes DESC)
+        WHERE m.streamingcompanyid = {0} \
+        ORDER BY m.NumOfLikes DESC'.format(streamingcompid))
     cursor.execute(query)
        # grab the column headers from the returned data
     column_headers = [x[0] for x in cursor.description]

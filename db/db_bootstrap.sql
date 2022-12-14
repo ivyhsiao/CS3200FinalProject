@@ -626,7 +626,7 @@ insert into liked_movies (MovieID, UserID) values ('6', '38');
 insert into liked_movies (MovieID, UserID) values ('39', '5');
 insert into liked_movies (MovieID, UserID) values ('26', '35');
 insert into liked_movies (MovieID, UserID) values ('34', '20');
-insert into liked_movies (MovieID, UserID) values ('2', '39');
+insert into liked_movies (MovieID, UserID) values ('2', '33');
 insert into liked_movies (MovieID, UserID) values ('23', '3');
 insert into liked_movies (MovieID, UserID) values ('17', '4');
 insert into liked_movies (MovieID, UserID) values ('5', '49');
