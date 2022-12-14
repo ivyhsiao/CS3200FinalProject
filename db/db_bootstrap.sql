@@ -31,96 +31,99 @@ create table Movie (
     
   PRIMARY KEY(MovieID)
 );
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (1, 'Case of the Whitechapel Vampire, The', 'Macedonian', 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', 166, '$5901926.87', 1994, 407284525);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (2, 'Resident Evil: Extinction', 'Dari', 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', 129, '$2051840.85', 2004, 579928488);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (3, 'Three Stooges in Orbit, The', 'Latvian', 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
+insert into Movie
+(MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes)
+values
+(1, 'Case of the Whitechapel Vampire, The', 'Macedonian', 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', 166, '$5901926.87', 1994, 407284525),
+(2, 'Resident Evil: Extinction', 'Dari', 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', 129, '$2051840.85', 2004, 579928488),
+(3, 'Three Stooges in Orbit, The', 'Latvian', 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
 
 Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
 
-Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.', 72, '$3870042.04', 1999, 428444780);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (4, 'Dog Pound', 'Swedish', 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.', 123, '$7653640.38', 2009, 213549305);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (5, 'Alice and Martin (Alice et Martin)', 'Sotho', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.', 103, '$2383968.49', 2007, 133280572);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (6, 'Waiting for Guffman', 'Swedish', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.
+Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.', 72, '$3870042.04', 1999, 428444780),
+(4, 'Dog Pound', 'Swedish', 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.', 123, '$7653640.38', 2009, 213549305),
+(5, 'Alice and Martin (Alice et Martin)', 'Sotho', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.', 103, '$2383968.49', 2007, 133280572),
+(6, 'Waiting for Guffman', 'Swedish', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
-Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', 76, '$8474306.31', 2011, 965469000);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (7, 'Juggernaut', 'Greek', 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', 100, '$6014226.09', 2004, 646352540);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (8, 'Fairhaven', 'Telugu', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', 76, '$8474306.31', 2011, 965469000),
+(7, 'Juggernaut', 'Greek', 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', 100, '$6014226.09', 2004, 646352540),
+(8, 'Fairhaven', 'Telugu', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
 
 In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
 
-Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 98, '$9038420.92', 1996, 795777612);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (9, 'Monitor, The (Babycall)', 'Chinese', 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', 101, '$1738940.74', 1996, 944446592);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (10, 'Death of Maria Malibran, The (Der Tod der Maria Malibran)', 'Sotho', 'Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', 173, '$8695948.32', 2009, 775714463);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (11, 'Public Speaking', 'Thai', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 161, '$5886655.23', 1999, 891455610);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (12, 'Evil Dead II (Dead by Dawn)', 'Icelandic', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 98, '$9038420.92', 1996, 795777612),
+(9, 'Monitor, The (Babycall)', 'Chinese', 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', 101, '$1738940.74', 1996, 944446592),
+(10, 'Death of Maria Malibran, The (Der Tod der Maria Malibran)', 'Sotho', 'Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', 173, '$8695948.32', 2009, 775714463),
+(11, 'Public Speaking', 'Thai', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 161, '$5886655.23', 1999, 891455610),
+(12, 'Evil Dead II (Dead by Dawn)', 'Icelandic', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
 
 Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
 
-Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', 155, '$6222529.74', 2007, 39756166);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (13, 'Police Academy 5: Assignment: Miami Beach', 'Korean', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', 174, '$5340727.97', 2008, 950699363);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (14, 'Bill Hicks: Sane Man', 'Tamil', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', 175, '$2352431.09', 2004, 503780072);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (15, 'Wild Guitar', 'Czech', 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', 108, '$2812377.12', 1998, 231273418);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (16, 'Fishtales', 'Icelandic', 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
+Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', 155, '$6222529.74', 2007, 39756166),
+(13, 'Police Academy 5: Assignment: Miami Beach', 'Korean', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', 174, '$5340727.97', 2008, 950699363),
+(14, 'Bill Hicks: Sane Man', 'Tamil', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', 175, '$2352431.09', 2004, 503780072),
+(15, 'Wild Guitar', 'Czech', 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', 108, '$2812377.12', 1998, 231273418),
+(16, 'Fishtales', 'Icelandic', 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
 
-Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', 177, '$7206679.50', 1977, 979857744);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (17, 'Pathology', 'Gujarati', 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
+Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', 177, '$7206679.50', 1977, 979857744),
+(17, 'Pathology', 'Gujarati', 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
 
 Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
 
-Fusce consequat. Nulla nisl. Nunc nisl.', 177, '$1494999.50', 1989, 766165865);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (18, 'Overcoat, The (Il cappotto)', 'Maltese', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 88, '$8630186.16', 2007, 391284655);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (19, 'Mr. Thank You (Arigatô-san)', 'Aymara', 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
+Fusce consequat. Nulla nisl. Nunc nisl.', 177, '$1494999.50', 1989, 766165865),
+(18, 'Overcoat, The (Il cappotto)', 'Maltese', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 88, '$8630186.16', 2007, 391284655),
+(19, 'Mr. Thank You (Arigatô-san)', 'Aymara', 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
 
-Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 95, '$5100936.34', 1999, 220538761);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (20, 'Vehicle 19', 'Malayalam', 'Fusce consequat. Nulla nisl. Nunc nisl.', 155, '$3002159.96', 1990, 947940110);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (21, 'Women in Love', 'Khmer', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', 154, '$5019358.08', 2006, 469833414);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (22, 'Butter', 'Bengali', 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 95, '$5100936.34', 1999, 220538761),
+(20, 'Vehicle 19', 'Malayalam', 'Fusce consequat. Nulla nisl. Nunc nisl.', 155, '$3002159.96', 1990, 947940110),
+(21, 'Women in Love', 'Khmer', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', 154, '$5019358.08', 2006, 469833414),
+(22, 'Butter', 'Bengali', 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
 
-Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.', 117, '$9670544.30', 1988, 642044800);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (23, 'I Saw Mommy Kissing Santa Claus', 'Macedonian', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 102, '$4506669.09', 1999, 912068655);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (24, 'Big Day, The (We Met on the Vineyard)', 'Malagasy', 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.', 90, '$9872531.97', 1992, 96916411);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (25, 'Remains of the Day, The', 'Somali', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', 89, '$2294240.69', 1926, 374661302);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (26, 'Snake Eyes', 'Spanish', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.', 117, '$9670544.30', 1988, 642044800),
+(23, 'I Saw Mommy Kissing Santa Claus', 'Macedonian', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 102, '$4506669.09', 1999, 912068655),
+(24, 'Big Day, The (We Met on the Vineyard)', 'Malagasy', 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.', 90, '$9872531.97', 1992, 96916411),
+(25, 'Remains of the Day, The', 'Somali', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', 89, '$2294240.69', 1926, 374661302),
+(26, 'Snake Eyes', 'Spanish', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
 
 In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
 
-Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 155, '$6308407.02', 1973, 613236227);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (27, 'Sexual Life', 'Croatian', 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 155, '$6308407.02', 1973, 613236227),
+(27, 'Sexual Life', 'Croatian', 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
 
-Fusce consequat. Nulla nisl. Nunc nisl.', 72, '$600093.42', 1990, 806189247);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (28, 'Ffolkes', 'Filipino', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+Fusce consequat. Nulla nisl. Nunc nisl.', 72, '$600093.42', 1990, 806189247),
+(28, 'Ffolkes', 'Filipino', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
-Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.', 139, '$8287922.14', 2005, 699471384);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (29, 'Welcome to Australia', 'Haitian Creole', 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.', 107, '$8910791.37', 2010, 206040966);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (30, 'Eyewitness (Janitor, The)', 'Kannada', 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.', 139, '$8287922.14', 2005, 699471384),
+(29, 'Welcome to Australia', 'Haitian Creole', 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.', 107, '$8910791.37', 2010, 206040966),
+(30, 'Eyewitness (Janitor, The)', 'Kannada', 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
 
-Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 114, '$1922178.80', 2006, 312456607);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (31, 'Hunky Dory', 'Czech', 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
+Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 114, '$1922178.80', 2006, 312456607),
+(31, 'Hunky Dory', 'Czech', 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
 
 Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
 
-Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.', 117, '$9979776.69', 1969, 197429572);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (32, 'Pornography (Pornografia)', 'Czech', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.', 117, '$9979776.69', 1969, 197429572),
+(32, 'Pornography (Pornografia)', 'Czech', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
 
-Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 138, '$4504606.56', 2009, 989911743);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (33, 'Broken Vessels', 'Dari', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 138, '$4504606.56', 2009, 989911743),
+(33, 'Broken Vessels', 'Dari', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
 
-Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.', 149, '$7653156.28', 2009, 723504654);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (34, 'Legend of Hercules, The', 'Azeri', 'In congue. Etiam justo. Etiam pretium iaculis justo.
+Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.', 149, '$7653156.28', 2009, 723504654),
+(34, 'Legend of Hercules, The', 'Azeri', 'In congue. Etiam justo. Etiam pretium iaculis justo.
 
-In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', 125, '$8207235.52', 1992, 118587128);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (35, 'Silent Night, Deadly Night III: Better Watch Out!', 'Sotho', 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', 125, '$8207235.52', 1992, 118587128),
+(35, 'Silent Night, Deadly Night III: Better Watch Out!', 'Sotho', 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
 
-Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 144, '$8989836.64', 1999, 878171272);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (36, 'Bad Blood: A Cautionary Tale ', 'Malay', 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.', 180, '$1399510.09', 1993, 992567721);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (37, 'Titus', 'Nepali', 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', 130, '$5057121.82', 2008, 938701346);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (38, 'Casshern', 'Bulgarian', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', 100, '$5854418.41', 2011, 201492375);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (39, 'Katze im Sack', 'French', 'In congue. Etiam justo. Etiam pretium iaculis justo.
+Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 144, '$8989836.64', 1999, 878171272),
+(36, 'Bad Blood: A Cautionary Tale ', 'Malay', 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.', 180, '$1399510.09', 1993, 992567721),
+(37, 'Titus', 'Nepali', 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', 130, '$5057121.82', 2008, 938701346),
+(38, 'Casshern', 'Bulgarian', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', 100, '$5854418.41', 2011, 201492375),
+(39, 'Katze im Sack', 'French', 'In congue. Etiam justo. Etiam pretium iaculis justo.
 
 In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
 
-Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 162, '$8702164.91', 1999, 868068823);
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (40, 'Arabian Nights', 'Māori', 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
+Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 162, '$8702164.91', 1999, 868068823),
+(40, 'Arabian Nights', 'Māori', 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
 
 Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
 
