@@ -4,28 +4,6 @@ from src import db
 
 movies = Blueprint('movies', __name__)
 
-@movies.route("/addmovie", methods = ['POST'])
-def post_movie():
-    current_app.logger.info(request.form)
-    cursor = db.get_db().cursor()
-
-    title = request.form['Movie Title']
-    language = request.form['Language']
-    yearmade = request.form['Year Made']
-    production_cost = request.form['Production Cost']
-    length = request.form['Movie Length']
-    description = request.form['Movie Description']
-    actor = request.form['Actor']
-    genre = request.form['Genre']
-    
-    query = f'INSERT INTO Movie(MovieLanguage, Description, YearMade, ProductionCost, Title, \
-            MovieLength) VALUES( \"{language}\", \"{description}\", \"{yearmade}\",\
-            \"{production_cost}\", \"{title}\, \"{length}\"'
-
-    cursor.execute(query)
-    db.get_db().commit()
-    return "success"
-
 # Get top 4 movies produced by rivalry production company
 @movies.route('/top4movies/<studioid>', methods=['GET'])
 def get_top4_movies(studioid):
@@ -61,17 +39,15 @@ def get_top4_movies(studioid):
 
     return jsonify(json_data)
 
-# get all movies from desired streaming service ranked by popularity (number of likes)
-@movies.route('/moviesstreamed/<streamingcompid>')
-def moviesstreamed(streamingcompid):
+# get all streaming services that stream a certain movie
+@movies.route('/streamed/<movieid>')
+def streamed_on(movieid):
     cursor = db.get_db().cursor()
-    query = ('SELECT sc.CompanyName, m.Title, m.Description, a.FirstName, a.LastName \
-        FROM Movie m JOIN starred_movies s ON m.MovieID = s.MovieID \
-        JOIN actors a ON a.ActorID = s.ActorID \
-        JOIN streamed_movies sm ON sm.MovieID = m.MovieID \
+    query = ('SELECT sc.CompanyName, sm.link\
+        FROM Movie m JOIN streamed_movies sm ON sm.MovieID = m.MovieID \
         JOIN StreamingCompany sc on sm.StreamingCompanyid = sc.companyid \
-        WHERE sc.companyid = {0} \
-        ORDER BY m.NumOfLikes DESC'.format(streamingcompid))
+        WHERE m.MovieID = {0}'.format(movieid))
+
     cursor.execute(query)
        # grab the column headers from the returned data
     column_headers = [x[0] for x in cursor.description]
