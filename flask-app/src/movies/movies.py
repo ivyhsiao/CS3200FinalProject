@@ -4,7 +4,6 @@ from src import db
 
 movies = Blueprint('movies', __name__)
 
-
 @movies.route("/addmovie", methods = ['POST'])
 def post_movie():
     title = request.form['Movie Title']
