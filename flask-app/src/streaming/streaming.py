@@ -24,7 +24,7 @@ def get_our_movies(streamingcompid):
     # get a cursor object from the database
     cursor = db.get_db().cursor()
 
-    query = 'SELECT m.Title, m.description \
+    query = 'SELECT m.Title, m.description, m.numoflikes, m.movielength \
         FROM Movie m JOIN starred_movies s ON m.movieid = s.movieid \
         JOIN streamed_movies sm ON sm.movieid = m.movieid \
         JOIN StreamingCompany sc on sm.StreamingCompanyId = sc.companyid \

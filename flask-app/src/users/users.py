@@ -69,12 +69,12 @@ def get_most_pop_products(genreid):
 @users.route('/liked/<userid>')
 def get_liked(userid):
     cursor = db.get_db().cursor()
-    query = 'SELECT m.Title, m.Description, m.NumOfLikes, m.YearMade, g.genrename \
+    query = 'SELECT m.MovieID, m.Title, m.Description, m.NumOfLikes, m.YearMade, g.genrename \
         FROM Movie m JOIN liked_movies lm ON m.movieid = lm.movieid \
         JOIN users u ON u.userid = lm.userid \
         JOIN movie_genre mg ON m.movieid = mg.movieid \
         JOIN Genre g ON mg.genreid = g.genreid \
-        WHERE m.movieid = {0}'.format(userid)
+        WHERE u.userid = {0}'.format(userid)
 
     cursor.execute(query)
        # grab the column headers from the returned data

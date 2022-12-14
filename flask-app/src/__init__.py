@@ -25,14 +25,12 @@ def create_app():
     db.init_app(app)
     
     # Import the various routes
-    from src.views import views
     from src.users.users  import users
     from src.streaming.streaming  import streaming
     from src.movies.movies  import movies
 
 
     # Register the routes that we just imported so they can be properly handled
-    app.register_blueprint(views,       url_prefix='/classic')
     app.register_blueprint(users,   url_prefix='/users')
     app.register_blueprint(streaming,    url_prefix='/streaming')
     app.register_blueprint(movies,    url_prefix='/movies')
