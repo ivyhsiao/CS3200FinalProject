@@ -18,7 +18,7 @@ def post_movie():
     db.get_db().commit()
     return "success"
 
-# Get all the movies from the streaming database
+# Get all the movies from the streaming database ranked by popularity
 @streaming.route('/ourmovies/<streamingcompid>', methods=['GET'])
 def get_our_movies(streamingcompid):
     # get a cursor object from the database
@@ -63,6 +63,33 @@ def get_others_movies(streamingcompid):
         WHERE NOT sm.streamingcompanyid = {0} \
         ORDER BY m.numoflikes DESC \
         LIMIT 6;'.format(streamingcompid)
+
+    cursor.execute(query)
+       # grab the column headers from the returned data
+    column_headers = [x[0] for x in cursor.description]
+
+    # create an empty dictionary object to use in 
+    # putting column headers together with data
+    json_data = []
+
+    # fetch all the data from the cursor
+    theData = cursor.fetchall()
+
+    # for each of the rows, zip the data elements together with
+    # the column headers. 
+    for row in theData:
+        json_data.append(dict(zip(column_headers, row)))
+
+    return jsonify(json_data)
+
+# get all streaming services that stream a certain movie
+@streaming.route('/streamed/<movieid>')
+def streamed_on(movieid):
+    cursor = db.get_db().cursor()
+    query = ('SELECT sc.CompanyName, sm.link\
+        FROM Movie m JOIN streamed_movies sm ON sm.MovieID = m.MovieID \
+        JOIN StreamingCompany sc on sm.StreamingCompanyid = sc.companyid \
+        WHERE m.MovieID = {0}'.format(movieid))
 
     cursor.execute(query)
        # grab the column headers from the returned data

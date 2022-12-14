@@ -5,6 +5,22 @@ from src import db
 
 users = Blueprint('users', __name__)
 
+# Add User
+@users.route('/users/adduser', methods=['POST'])
+def add_user():
+    current_app.logger.info(request.form)
+    cursor = db.get_db().cursor()
+    userID = request.form['userID']
+    email = request.form['email']
+    password = request.form['password']
+    fname = request.form['fname']
+    lname = request.form['lname']
+    query = f'Insert INTO users(userid, email, password, fname, lname) VALUES( \"{userID}\", \
+     \"{email}\", \"{password}\", \"{fname}\", \"{lname}\"'
+    cursor.execute(query)
+    db.get_db().commit()
+    return "success"
+
 # add liked movie
 @users.route("/addliked", methods = ['POST'])
 def like_movie():
@@ -15,22 +31,6 @@ def like_movie():
 
     query = f'Insert INTO liked_movies(movieid, userid) VALUES( \"{movieid}\", \"{userid}\")'
 
-    cursor.execute(query)
-    db.get_db().commit()
-    return "success"
-
-# Add User
-@users.route('/users/<userID>', methods=['POST'])
-def add_customer(userID):
-    current_app.logger.info(request.form)
-    cursor = db.get_db().cursor()
-    userID = request.form['userID']
-    email = request.form['email']
-    password = request.form['password']
-    fname = request.form['fname']
-    lname = request.form['lname']
-    query = f'Insert INTO users(userid, email, password, fname, lname) VALUES( \"{userID}\", \
-     \"{email}\", \"{password}\", \"{fname}\", \"{lname}\"'
     cursor.execute(query)
     db.get_db().commit()
     return "success"
