@@ -665,11 +665,11 @@ insert into liked_movies (MovieID, UserID) values ('3', '47');
 
 DROP TABLE IF EXISTS watched_movies;
 CREATE TABLE watched_movies(
-    movieId INT NOT NULL,
-    userId INT NOT NULL,
+    MovieID INT NOT NULL,
+    UserID INT NOT NULL,
 
-    PRIMARY KEY(movieId, userId),
-    FOREIGN KEY(userId) references User (userId),
+    PRIMARY KEY(MovieID, UserID),
+    FOREIGN KEY(userId) references users (userId),
     FOREIGN KEY(movieId) references Movie (movieId)
 );
 
