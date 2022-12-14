@@ -390,7 +390,7 @@ insert into starred_movies (ActorID, MovieID) values ('2', '25');
 DROP TABLE IF EXISTS ProductionCompany;
 CREATE TABLE ProductionCompany(
   studioid INTEGER NOT NULL,
-	CompanyName VARCHAR(50),
+	StudioName VARCHAR(50),
 	Email VARCHAR(50),
 	Phone VARCHAR(50),
 	Country VARCHAR(50),
@@ -401,16 +401,16 @@ CREATE TABLE ProductionCompany(
   PRIMARY KEY(studioid),
   UNIQUE(Email, Phone)
 );
-insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (1, 'Jennee', 'jberdale0@newyorker.com', '889-695-9808', 'South Korea', null, 'Ansan-si', '28567 Quincy Avenue');
-insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (2, 'Kara-lynn', 'kjobson1@delicious.com', '847-581-8636', 'Poland', null, 'Piława Górna', '128 Everett Way');
-insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (3, 'Turner', 'triddeough2@ebay.com', '931-890-0696', 'China', null, 'Yangchengzhuang', '270 Michigan Court');
-insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (4, 'Erhard', 'emongeot3@mac.com', '447-217-3604', 'Czech Republic', null, 'Libouchec', '2455 Hauk Hill');
-insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (5, 'Bent', 'brumming4@tinypic.com', '611-613-6479', 'Sweden', 'Stockholm', 'Stocksund', '6445 Ridgeview Junction');
-insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (6, 'Clive', 'catcherley5@soundcloud.com', '262-296-5316', 'China', null, 'Shaxi', '367 Jay Terrace');
-insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (7, 'Olive', 'obrundle6@facebook.com', '146-654-2812', 'China', null, 'Huizhai', '938 Gale Junction');
-insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (8, 'Leslie', 'lbruckstein7@networkadvertising.org', '861-861-4729', 'Portugal', 'Ilha de São Miguel', 'Pico da Pedra', '7048 Donald Avenue');
-insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (9, 'Blair', 'bpolland8@nba.com', '705-924-5442', 'Thailand', null, 'Nong Saeng', '8 Sunfield Center');
-insert into ProductionCompany (studioid, CompanyName, email, phone, Country, State, City, Street) values (10, 'Giselle', 'ghanks9@dion.ne.jp', '202-372-1240', 'Poland', null, 'Bieliny', '9 Nevada Drive');
+insert into ProductionCompany (studioid, StudioName, email, phone, Country, State, City, Street) values (1, 'Jennee', 'jberdale0@newyorker.com', '889-695-9808', 'South Korea', null, 'Ansan-si', '28567 Quincy Avenue');
+insert into ProductionCompany (studioid, StudioName, email, phone, Country, State, City, Street) values (2, 'Kara-lynn', 'kjobson1@delicious.com', '847-581-8636', 'Poland', null, 'Piława Górna', '128 Everett Way');
+insert into ProductionCompany (studioid, StudioName, email, phone, Country, State, City, Street) values (3, 'Turner', 'triddeough2@ebay.com', '931-890-0696', 'China', null, 'Yangchengzhuang', '270 Michigan Court');
+insert into ProductionCompany (studioid, StudioName, email, phone, Country, State, City, Street) values (4, 'Erhard', 'emongeot3@mac.com', '447-217-3604', 'Czech Republic', null, 'Libouchec', '2455 Hauk Hill');
+insert into ProductionCompany (studioid, StudioName, email, phone, Country, State, City, Street) values (5, 'Bent', 'brumming4@tinypic.com', '611-613-6479', 'Sweden', 'Stockholm', 'Stocksund', '6445 Ridgeview Junction');
+insert into ProductionCompany (studioid, StudioName, email, phone, Country, State, City, Street) values (6, 'Clive', 'catcherley5@soundcloud.com', '262-296-5316', 'China', null, 'Shaxi', '367 Jay Terrace');
+insert into ProductionCompany (studioid, StudioName, email, phone, Country, State, City, Street) values (7, 'Olive', 'obrundle6@facebook.com', '146-654-2812', 'China', null, 'Huizhai', '938 Gale Junction');
+insert into ProductionCompany (studioid, StudioName, email, phone, Country, State, City, Street) values (8, 'Leslie', 'lbruckstein7@networkadvertising.org', '861-861-4729', 'Portugal', 'Ilha de São Miguel', 'Pico da Pedra', '7048 Donald Avenue');
+insert into ProductionCompany (studioid, StudioName, email, phone, Country, State, City, Street) values (9, 'Blair', 'bpolland8@nba.com', '705-924-5442', 'Thailand', null, 'Nong Saeng', '8 Sunfield Center');
+insert into ProductionCompany (studioid, StudioName, email, phone, Country, State, City, Street) values (10, 'Giselle', 'ghanks9@dion.ne.jp', '202-372-1240', 'Poland', null, 'Bieliny', '9 Nevada Drive');
 
 DROP TABLE IF EXISTS produced_by_comp;
 create table produced_by_comp (

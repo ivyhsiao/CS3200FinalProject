@@ -30,13 +30,13 @@ def get_top4_movies(studioid):
     cursor = db.get_db().cursor()
 
     query = 'SELECT m.Title, m.Description, (a.FirstName, a.LastName as ActorName), p.CompanyName, m.NumOfLikes \
-    FROM Movie m JdOIN starred_movies s ON m.MovieID = s.MovieID \
+    FROM Movie m JOIN starred_movies s ON m.MovieID = s.MovieID \
     JOIN actors a ON a.ActorID = s.ActorID \
     JOIN produced_by_comp pb ON pb.MovieID = m.MovieID \
-    JOIN ProductionCompany p on pb.studioid = p.studioid \
-    WHERE studioid = {0} \
+    JOIN ProductionCompany p on pb.StudioID = p.studioid \
+    WHERE p.studioid = {0} \
     ORDER BY m.NumOfLikes DESC \
-    LIMIT 4'.format(studioid);
+    LIMIT 4;'.format(studioid)
 
     # use cursor to query the database for a list of products
     cursor.execute(query)
@@ -62,12 +62,12 @@ def get_top4_movies(studioid):
 @movies.route('/moviesstreamed/<streamingcompid>')
 def moviesstreamed(streamingcompid):
     cursor = db.get_db().cursor()
-    query = ('SELECT m.Title, m.Description, (a.FirstName, a.LastName as ActorName), \
+    query = ('SELECT * \
         FROM Movie m JOIN starred_movies s ON m.MovieID = s.MovieID \
         JOIN actors a ON a.ActorID = s.ActorID \
         JOIN streamed_movies sm ON sm.MovieID = m.MovieID \
         JOIN StreamingCompany sc on sm.StreamingCompanyid = sc.companyid \
-        WHERE m.streamingcompanyid = {0} \
+        WHERE sc.companyid = {0} \
         ORDER BY m.NumOfLikes DESC'.format(streamingcompid))
     cursor.execute(query)
        # grab the column headers from the returned data
