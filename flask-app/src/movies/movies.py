@@ -32,7 +32,7 @@ def get_top4_movies(studioid):
 
     query = '''
     SELECT m.Title, m.Description, (a.FirstName, a.LastName as ActorName), p.companyname
-    FROM Movie m JOIN starred_movies s ON m.movieid = s.movieid
+    FROM Movie m JdOIN starred_movies s ON m.movieid = s.movieid
     JOIN actors a ON a.actorid = s.actorid
     JOIN studio_movie sm ON sm.movieid = m.movieid
     JOIN ProductionCompany p on sm.studioid = p.studioid
