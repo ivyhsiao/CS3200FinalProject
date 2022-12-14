@@ -955,7 +955,7 @@ DROP TABLE IF EXISTS streamed_movies;
 CREATE TABLE streamed_movies (
     movieId INT NOT NULL,
     StreamingCompanyid INT NOT NULL,
-    link varchar(1000),
+    link VARCHAR(10000),
     
     PRIMARY KEY(movieId, StreamingCompanyId),
     FOREIGN KEY(StreamingCompanyId) references StreamingCompany (CompanyId),
