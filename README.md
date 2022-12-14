@@ -20,6 +20,25 @@ This repo contains a boilerplate setup for spinning up 2 docker containers:
 1. `conda activate webdev`
 1. `pip install flask flask-mysql flask-restful cryptography flask-login`
 
+## Project Overview
+This product aims to allow users to easily find movies they want to watch and where to watch them. This product are able to perform these actions:
+* add users
+* add movies to liked movies
+* recommend 5 top movies from desired genre
+* provide a list of user's liked movies
+* add new movies (for production companies only)
+* provide a list of top 4 movies from inputted studio
+* provide a list of streaming domains who stream a certain company with links to the movie
+* provide a list of actors and their contacts of a certain movie (for productioin companies only)
+* add movie to list of movies they stream (for streaming companies only)
+* provide a list of all movies streamed by inputted streaming company ranked by popularity
+* provide a list of top 6 movies streamed by inputted streaming company
 
-
-
+In order to complete these actions, a database with the following entities were established
+* Movies
+* Actors
+* Production Companies
+* Users
+* Streaming Companies
+* Producers
+* Genre
