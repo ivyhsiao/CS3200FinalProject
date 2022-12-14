@@ -7,7 +7,7 @@ streaming = Blueprint('streaming', __name__)
 
 @streaming.route("/addmovie", methods = ['POST'])
 def post_movie():
-    app.logger.info(request.form)
+    current_app.logger.info(request.form)
     cursor = db.get_db().cursor()
     movieid = request.form('movieid')
     streamingcompanyid = request.form('streamingcompanyid')
