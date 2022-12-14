@@ -91,21 +91,18 @@ def moviesstreamed(streamingcompid):
 
     return jsonify(json_data)
 
-# Get top 4 movies produced by rivalry production company
-@movies.route('/movies', methods=['GET'])
-def get_movies():
-    # get a cursor object from database
+# get all the actors of a movie and their contacts
+@movies.route('/actors/<movieid>')
+def get_actors(movieid):
     cursor = db.get_db().cursor()
-
     query = '''
-    SELECT *
-    FROM Movie
+        SELECT m.Title, (a.FirstName, a.LastName as ActorName), a.email, a.phone, a.country
+        FROM movie m JOIN starred_movies s ON m.movieid = s.movieid
+        JOIN actor a ON a.actorid = s.actorid
+        WHERE m.movieid = {0}'.format(movieid)
     '''
-
-    # use cursor to query the database for a list of products
     cursor.execute(query)
-
-    # grab the column headers from the returned data
+       # grab the column headers from the returned data
     column_headers = [x[0] for x in cursor.description]
 
     # create an empty dictionary object to use in 

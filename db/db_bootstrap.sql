@@ -21,7 +21,7 @@ use teamName_db;
 DROP TABLE IF EXISTS Movie;
 create table Movie (
   MovieID INT NOT NULL,
-	Title VARCHAR(50),
+	Title TEXT,
 	MovieLanguage VARCHAR(50),
 	Description TEXT,
 	MovieLength INT,
@@ -55,7 +55,7 @@ In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat n
 
 Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', 101, '$1738940.74', 1996, 944446592);
 
-insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (10, 'Death of Maria Malibran, The (Der Tod der Maria Malibran)', 'Sotho', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.
+insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (10, 'Death of Maria Malibran', 'Sotho', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
 Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', 173, '$8695948.32', 2009, 775714463);
 insert into Movie (MovieID, Title, MovieLanguage, Description, MovieLength, ProductionCost, YearMade, NumOfLikes) values (11, 'Public Speaking', 'Thai', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 161, '$5886655.23', 1999, 891455610);
@@ -154,10 +154,12 @@ insert into Genre (GenreID, GenreName) values (10, 'Horror');
 
 DROP TABLE IF EXISTS movie_genre;
 create table movie_genre (
-	MovieID VARCHAR(50),
-	GenreID VARCHAR(2),
+	MovieID INT NOT NULL,
+	GenreID INT NOT NULL,
 
+  CONSTRAINT fk_1
   FOREIGN KEY (MovieID) REFERENCES Movie (MovieID),
+  CONSTRAINT fk_2
   FOREIGN KEY (GenreID) REFERENCES Genre (GenreID)
 );
 insert into movie_genre (MovieID, GenreID) values ('16', 5);
@@ -278,8 +280,8 @@ insert into actors (ActorID, FirstName, LastName, email, gender, country, phone)
 
 DROP TABLE IF EXISTS starred_movies;
 create table starred_movies (
-	ActorID VARCHAR(50),
-	MovieID VARCHAR(50),
+	ActorID INT NOT NULL,
+	MovieID INT NOT NULL,
 
   FOREIGN KEY (MovieID) REFERENCES Movie (MovieID),
   FOREIGN KEY (ActorID) REFERENCES actors (ActorID)
@@ -412,8 +414,8 @@ insert into ProductionCompany (studioid, CompanyName, email, phone, Country, Sta
 
 DROP TABLE IF EXISTS produced_by_comp;
 create table produced_by_comp (
-	MovieID VARCHAR(50),
-	StudioID VARCHAR(50),
+	MovieID INT NOT NULL,
+	StudioID INT NOT NULL,
 
   FOREIGN KEY (MovieID) REFERENCES Movie (MovieID),
   FOREIGN KEY (StudioID) REFERENCES ProductionCompany (studioid)
@@ -553,8 +555,8 @@ insert into users (userid, FirstName, LastName, email, password) values (60, 'Ga
 
 DROP TABLE IF EXISTS liked_movies;
 CREATE TABLE liked_movies(
-    movieId int NOT NULL,
-    userId int NOT NULL,
+    movieId INT NOT NULL,
+    userId INT NOT NULL,
 
     PRIMARY KEY(movieId, userId),
     FOREIGN KEY(userId) references users (userid),
@@ -663,8 +665,8 @@ insert into liked_movies (MovieID, UserID) values ('3', '47');
 
 DROP TABLE IF EXISTS watched_movies;
 CREATE TABLE watched_movies(
-    movieId int NOT NULL,
-    userId int NOT NULL,
+    movieId INT NOT NULL,
+    userId INT NOT NULL,
 
     PRIMARY KEY(movieId, userId),
     FOREIGN KEY(userId) references User (userId),
@@ -829,8 +831,8 @@ insert into Producer (producerID, FirstName, LastName, email, gender, country, p
 
 DROP TABLE IF EXISTS produced_by;
 CREATE TABLE produced_by(
-  movieId int NOT NULL,
-  producerId int NOT NULL,
+  movieId INT NOT NULL,
+  producerId INT NOT NULL,
 
   PRIMARY KEY(movieId, producerId),
   FOREIGN KEY(producerid) references Producer(producerid),
@@ -951,8 +953,8 @@ insert into StreamingCompany (companyid, CompanyName, email, Phone, Link) values
 
 DROP TABLE IF EXISTS streamed_movies;
 CREATE TABLE streamed_movies (
-    movieId int NOT NULL,
-    StreamingCompanyid int NOT NULL,
+    movieId INT NOT NULL,
+    StreamingCompanyid INT NOT NULL,
     link varchar(1000),
     
     PRIMARY KEY(movieId, StreamingCompanyId),
