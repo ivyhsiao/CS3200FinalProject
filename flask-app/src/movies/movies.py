@@ -29,7 +29,7 @@ def get_top4_movies(studioid):
     # get a cursor object from database
     cursor = db.get_db().cursor()
 
-    query = 'SELECT m.Title, m.Description, (a.FirstName, a.LastName as ActorName), p.CompanyName, m.NumOfLikes \
+    query = 'SELECT m.Title, m.Description, a.FirstName, a.LastName, p.studioname, m.NumOfLikes \
     FROM Movie m JOIN starred_movies s ON m.MovieID = s.MovieID \
     JOIN actors a ON a.ActorID = s.ActorID \
     JOIN produced_by_comp pb ON pb.MovieID = m.MovieID \
@@ -62,7 +62,7 @@ def get_top4_movies(studioid):
 @movies.route('/moviesstreamed/<streamingcompid>')
 def moviesstreamed(streamingcompid):
     cursor = db.get_db().cursor()
-    query = ('SELECT * \
+    query = ('SELECT sc.CompanyName, m.Title, m.Description, a.FirstName, a.LastName \
         FROM Movie m JOIN starred_movies s ON m.MovieID = s.MovieID \
         JOIN actors a ON a.ActorID = s.ActorID \
         JOIN streamed_movies sm ON sm.MovieID = m.MovieID \
@@ -91,7 +91,8 @@ def moviesstreamed(streamingcompid):
 @movies.route('/actors/<movieid>')
 def get_actors(movieid):
     cursor = db.get_db().cursor()
-    query = ('SELECT * FROM Movie m JOIN starred_movies s ON m.MovieID = s.MovieID JOIN actors a ON a.ActorID = s.ActorID WHERE m.MovieID = {0}'.format(movieid))
+    query = ('SELECT a.FirstName, a.LastName, a.email, a.phone, a.country, a.gender \
+    FROM Movie m JOIN starred_movies s ON m.MovieID = s.MovieID JOIN actors a ON a.ActorID = s.ActorID WHERE m.MovieID = {0}'.format(movieid))
     cursor.execute(query)
        # grab the column headers from the returned data
     column_headers = [x[0] for x in cursor.description]
