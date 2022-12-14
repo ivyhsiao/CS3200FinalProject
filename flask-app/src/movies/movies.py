@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify, make_response
+from flask import Blueprint, request, jsonify, make_response, current_app
 import json
 from src import db
 
@@ -8,7 +8,7 @@ movies = Blueprint('movies', __name__)
 def post_movie():
     current_app.logger.info(request.form)
     cursor = db.get_db().cursor()
-    
+
     title = request.form['Movie Title']
     language = request.form['Language']
     yearmade = request.form['Year Made']

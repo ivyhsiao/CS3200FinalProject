@@ -1,6 +1,6 @@
 # Some set up for the application 
 
-from flask import Flask
+from flask import Flask, current_app
 from flaskext.mysql import MySQL
 
 # create a MySQL object that we will use in other parts of the API

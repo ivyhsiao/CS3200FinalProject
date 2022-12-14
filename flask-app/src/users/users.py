@@ -1,9 +1,23 @@
-from flask import Blueprint, request, jsonify, make_response
+from flask import Blueprint, request, jsonify, make_response, current_app
 import json
 from src import db
 
 
 users = Blueprint('users', __name__)
+
+# add liked movie
+@users.route("/addliked", methods = ['POST'])
+def like_movie():
+    current_app.logger.info(request.form)
+    cursor = db.get_db().cursor()
+    movieid = request.form['movieid']
+    userid = request.form['userid']
+
+    query = f'Insert INTO liked_movies(movieid, userid) VALUES( \"{movieid}\", \"{userid}\")'
+
+    cursor.execute(query)
+    db.get_db().commit()
+    return "success"
 
 # Add User
 @users.route('/users/<userID>', methods=['POST'])
