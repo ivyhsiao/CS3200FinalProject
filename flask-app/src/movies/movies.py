@@ -32,7 +32,7 @@ def get_top4_movies(studioid):
     # get a cursor object from database
     cursor = db.get_db().cursor()
 
-    query = 'SELECT m.Title, m.Description, a.FirstName, a.LastName, p.studioname, m.NumOfLikes \
+    query = 'SELECT DISTINCT m.Title, m.Description, a.FirstName, a.LastName, p.studioname, m.NumOfLikes \
     FROM Movie m JOIN starred_movies s ON m.MovieID = s.MovieID \
     JOIN actors a ON a.ActorID = s.ActorID \
     JOIN produced_by_comp pb ON pb.MovieID = m.MovieID \
@@ -86,10 +86,10 @@ def get_actors(movieid):
     return jsonify(json_data)
 
 # get the top 5 movies to recommend from the database by genre
-@movies.route('/top5movie/<genreid>')
+@movies.route('/top5movies/<genreid>')
 def get_most_pop_products(genreid):
     cursor = db.get_db().cursor()
-    query = 'SELECT m.Title, m.Description, m.NumOfLikes, m.YearMade, g.genrename \
+    query = 'SELECT DISTINCT m.Title, m.Description, m.NumOfLikes, m.YearMade, g.genrename \
         FROM Movie m JOIN movie_genre mg ON m.movieid = mg.movieid \
         JOIN Genre g ON mg.genreid = g.genreid \
         WHERE g.genreid = {0} \

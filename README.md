@@ -32,7 +32,6 @@ This product aims to allow users to easily find movies they want to watch and wh
 * provide a list of actors and their contacts of a certain movie (for productioin companies only)
 * add movie to list of movies they stream (for streaming companies only)
 * provide a list of all movies streamed by inputted streaming company ranked by popularity
-* provide a list of top 6 movies streamed by inputted streaming company
 
 In order to complete these actions, a database with the following entities were established
 * Movies
