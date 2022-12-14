@@ -27,7 +27,7 @@ create table Movie (
 	MovieLength INT,
 	ProductionCost VARCHAR(50),
 	YearMade VARCHAR(50),
-	NumOfLikes INT
+	NumOfLikes INT,
     
   PRIMARY KEY(MovieID)
 );
