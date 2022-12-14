@@ -760,7 +760,7 @@ insert into watched_movies (MovieID, UserID) values ('8', '24');
 insert into watched_movies (MovieID, UserID) values ('14', '56');
 insert into watched_movies (MovieID, UserID) values ('7', '39');
 insert into watched_movies (MovieID, UserID) values ('18', '47');
-insert into watched_movies (MovieID, UserID) values ('6', '6');
+insert into watched_movies (MovieID, UserID) values ('6', '19');
 insert into watched_movies (MovieID, UserID) values ('38', '49');
 insert into watched_movies (MovieID, UserID) values ('12', '21');
 insert into watched_movies (MovieID, UserID) values ('22', '35');
