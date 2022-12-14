@@ -43,7 +43,9 @@ In order to complete these actions, a database with the following entities were 
 * Genre
 
 ## AppSmith UI
+Here is the AppSmith application of our product
 https://appsmith.cs3200.net/app/cs3200-final-application/add-movie-to-liked-639950e4bb1b8466b1c7a564
 
 ## Video Pitch
-
+Here is a video introduction of our product
+https://drive.google.com/file/d/1z9RAHxDH72RzxLuJTvBqHM1VqHXZib5q/view?usp=sharing
