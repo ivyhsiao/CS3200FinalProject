@@ -29,16 +29,14 @@ def get_top4_movies(studioid):
     # get a cursor object from database
     cursor = db.get_db().cursor()
 
-    query = '''
-    SELECT m.Title, m.Description, (a.FirstName, a.LastName as ActorName), p.companyname
-    FROM Movie m JdOIN starred_movies s ON m.movieid = s.movieid
-    JOIN actors a ON a.actorid = s.actorid
-    JOIN studio_movie sm ON sm.movieid = m.movieid
-    JOIN ProductionCompany p on sm.studioid = p.studioid
-    WHERE studioid = {0}'.format(studioid)
-    ORDER BY m.numoflikes DESC
-    LIMIT 4;
-    '''
+    query = 'SELECT m.Title, m.Description, (a.FirstName, a.LastName as ActorName), p.companyname \
+    FROM Movie m JdOIN starred_movies s ON m.movieid = s.movieid \
+    JOIN actors a ON a.actorid = s.actorid \
+    JOIN studio_movie sm ON sm.movieid = m.movieid \
+    JOIN ProductionCompany p on sm.studioid = p.studioid \
+    WHERE studioid = {0} \
+    ORDER BY m.numoflikes DESC \
+    LIMIT 4'.format(studioid);
 
     # use cursor to query the database for a list of products
     cursor.execute(query)
