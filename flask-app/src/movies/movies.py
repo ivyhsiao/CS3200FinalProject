@@ -15,7 +15,7 @@ def post_movie():
     actor = request.form['Actor']
     genre = request.form['Genre']
     
-    query = f'INSERT INTO movie(MovieLanguage, Description, YearMade, ProductionCost, Title, \
+    query = f'INSERT INTO Movie(MovieLanguage, Description, YearMade, ProductionCost, Title, \
             MovieLength) VALUES( \"{language}\", \"{description}\", \"{yearmade}\",\
             \"{production_cost}\", \"{title}\, \"{length}\"'
 
@@ -29,13 +29,13 @@ def get_top4_movies(studioid):
     # get a cursor object from database
     cursor = db.get_db().cursor()
 
-    query = 'SELECT m.Title, m.Description, (a.FirstName, a.LastName as ActorName), p.companyname \
-    FROM Movie m JdOIN starred_movies s ON m.movieid = s.movieid \
-    JOIN actors a ON a.actorid = s.actorid \
-    JOIN studio_movie sm ON sm.movieid = m.movieid \
-    JOIN ProductionCompany p on sm.studioid = p.studioid \
+    query = 'SELECT m.Title, m.Description, (a.FirstName, a.LastName as ActorName), p.CompanyName, m.NumOfLikes \
+    FROM Movie m JdOIN starred_movies s ON m.MovieID = s.MovieID \
+    JOIN actors a ON a.ActorID = s.ActorID \
+    JOIN produced_by_comp pb ON pb.MovieID = m.MovieID \
+    JOIN ProductionCompany p on pb.studioid = p.studioid \
     WHERE studioid = {0} \
-    ORDER BY m.numoflikes DESC \
+    ORDER BY m.NumOfLikes DESC \
     LIMIT 4'.format(studioid);
 
     # use cursor to query the database for a list of products
