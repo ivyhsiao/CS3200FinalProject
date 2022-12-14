@@ -22,16 +22,17 @@ def add_customer(userID):
     return "success"
 
 
-# get the top 5 movies to recommend from the database
-@users.route('/top5recomm')
-def get_most_pop_products():
+# get the top 5 movies to recommend from the database by genre
+@users.route('/top5recomm/<genreid>')
+def get_most_pop_products(genreid):
     cursor = db.get_db().cursor()
-    query = '''
-        SELECT Title, Description, NumOfLikes, YearMade
-        FROM Movie
-        ORDER BY NumOfLikes DESC
-        LIMIT 5;
-    '''
+    query = 'SELECT m.Title, m.Description, m.NumOfLikes, m.YearMade \
+        FROM Movie m JOIN movie_genre mg ON m.movieid = mg.movieid \
+        JOIN Genre g ON mg.genreid = g.genreid \
+        WHERE g.genreid = {0} \
+        ORDER BY NumOfLikes DESC \
+        LIMIT 5;'.format(genreid)
+        
     cursor.execute(query)
        # grab the column headers from the returned data
     column_headers = [x[0] for x in cursor.description]
